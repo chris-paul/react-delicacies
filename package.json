@@ -1,0 +1,23 @@
+{
+  "name": "react-delicacies",
+  "version": "1.0.0",
+  "description": "react redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-paul/react-delicacies.git"
+  },
+  "keywords": [
+    "react",
+    "redux"
+  ],
+  "author": "lhk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chris-paul/react-delicacies/issues"
+  },
+  "homepage": "https://github.com/chris-paul/react-delicacies#readme"
+}
