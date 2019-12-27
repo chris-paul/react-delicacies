@@ -1,0 +1,10 @@
+#忽略 所有的 node_modules
+node_modules/
+#忽略 编辑器文件
+.idea
+.vscode
+.stylelintcache
+jsconfig.json
+package-lock.json
+#忽略 public
+public/

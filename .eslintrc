@@ -1,0 +1,73 @@
+{
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "jest": true
+    },
+    "globals": {
+        "__dirname": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+        "jsx": true,
+        "modules": true,
+        "legacyDecorators": true
+      }
+    },
+    "extends": "airbnb",
+    "plugins": ["react"],
+    "settings": {
+        "react": { "version": "detect" }
+    },
+    "rules": {
+        "semi": [1],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "comma-dangle": [
+            1,
+            "always-multiline"
+        ],
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "react/jsx-indent": [
+            "error",
+            4
+        ],
+        "react/jsx-indent-props": [
+            "error",
+            4
+        ],
+        "prefer-object-spread" : [0],
+        "arrow-parens": 0,
+        "react/jsx-props-no-spreading": 0,
+        "import/prefer-default-export": 0,
+        "react/prop-types": 0,
+        "react/jsx-no-bind": 0,
+        "react/jsx-wrap-multilines": 0,
+        "no-script-url": 0,
+        "arrow-body-style": 0,
+        "max-len": 0,
+        "no-restricted-syntax": 0,
+        "no-continue": 0,
+        "object-curly-newline": 0,
+        "camelcase": 0,
+        "import/no-cycle": 0,
+        "no-param-reassign": 0
+    }
+}
