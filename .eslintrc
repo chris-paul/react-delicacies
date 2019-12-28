@@ -1,26 +1,38 @@
 {
     "parser": "babel-eslint",
     "env": {
-      "browser": true,
-      "es6": true,
-      "node": true,
-      "jest": true
+        "browser": true,
+        "es6": true,
+        "node": true,
+        "jest": true
     },
     "globals": {
+        "G2": true,
         "__dirname": true
     },
     "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true,
-        "modules": true,
-        "legacyDecorators": true
-      }
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true,
+            "legacyDecorators": true
+        }
     },
     "extends": "airbnb",
-    "plugins": ["react"],
+    "plugins": ["markdown", "react", "babel"],
     "settings": {
+        "import/resolver": {
+            "alias": {
+                "map": [
+                    // ["utils", "./src/utils"],
+                    // ["tools", "./src/utils/toolLib"],
+                    // ["api", "./src/utils/api"],
+                    // ["servers", "./src/servers"],
+                    ["components", "./src/components"]
+                ]
+            }
+        },
         "react": { "version": "detect" }
     },
     "rules": {
@@ -53,21 +65,6 @@
             "error",
             4
         ],
-        "prefer-object-spread" : [0],
-        "arrow-parens": 0,
-        "react/jsx-props-no-spreading": 0,
-        "import/prefer-default-export": 0,
-        "react/prop-types": 0,
-        "react/jsx-no-bind": 0,
-        "react/jsx-wrap-multilines": 0,
-        "no-script-url": 0,
-        "arrow-body-style": 0,
-        "max-len": 0,
-        "no-restricted-syntax": 0,
-        "no-continue": 0,
-        "object-curly-newline": 0,
-        "camelcase": 0,
-        "import/no-cycle": 0,
-        "no-param-reassign": 0
+        "import/no-unresolved": 0
     }
 }
