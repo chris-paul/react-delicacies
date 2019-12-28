@@ -1,0 +1,23 @@
+/*
+ * @Description: 常用 mixin封装
+ * @Author: 廉恒凯
+ * @Date: 2019-10-07 17:19:20
+ * @LastEditTime: 2019-10-07 17:19:20
+ * @LastEditors: Please set LastEditors
+ */
+
+ // 隐藏滚动条
+ .hiddenSroll{
+    // chrome 和Safari
+    &::-webkit-scrollbar { 
+        width: 0 ;
+        display: none;
+    }
+};
+
+ // 按钮的公共样式
+.btnCommonStyle(@btnColor){
+    background:@btnColor;
+    color:#fff;
+    border-color:@btnColor;
+}

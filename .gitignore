@@ -7,4 +7,4 @@ node_modules/
 jsconfig.json
 package-lock.json
 #忽略 public
-public/
+dist/
