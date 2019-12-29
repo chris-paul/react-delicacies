@@ -12,18 +12,17 @@ import { ConfigProvider } from 'antd';
 import { Provider } from 'react-redux';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { AppContainer } from 'react-hot-loader';
-import { RouterCom } from './router';
+import Home from './pages/Home';
 import store from './store';
 import './index.less';
 
 const render = async () => {
     const root = document.getElementById('root');
-    // 这边checkcookie后就能拿到是否登录状态，以及登录以后的一些信息
     ReactDOM.render(
         <AppContainer>
             <ConfigProvider>
                 <Provider store={store}>
-                    <RouterCom />
+                    <Home />
                 </Provider>
             </ConfigProvider>
         </AppContainer>,
@@ -35,10 +34,10 @@ render();
 
 /* 如果HMR冒泡到最顶层,那么就需要重新渲染app.js */
 if (module.hot) {
-    module.hot.accept('./router', () => {
+    module.hot.accept('./pages/Home', () => {
         /* 因为在App里使用的是export default语法，这里使用的是require,默认不会加载default的，所以需要手动加上 */
         /* eslint-disable global-require */
-        const NextApp = require('./router').default;
+        const NextApp = require('./pages/Home').default;
         /* eslint-disable global-require */
         render(NextApp);
     });

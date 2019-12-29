@@ -8,6 +8,4 @@
  */
 import testCom from './TestCom/reducer';
 
-export {
-    testCom,
-};
+export default testCom;

@@ -8,7 +8,7 @@
  */
 /*  项目根目录reducer */
 import { combineReducers } from 'redux-immutablejs';
-import * as reducers from 'components/index';
+import * as reducers from '@components/index';
 
 const rootReducers = combineReducers({ ...reducers });
 export default rootReducers;

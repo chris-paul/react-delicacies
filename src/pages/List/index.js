@@ -6,8 +6,8 @@
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\pages\Login\index.js
  */
-const Login = () => {
-    return 'login';
-};
+const List = () => (
+    'List'
+);
 
-export default Login;
+export default List;

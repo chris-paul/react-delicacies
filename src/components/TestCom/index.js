@@ -7,19 +7,19 @@
  * @FilePath: \react-delicacies\src\components\TestCom\index.js
  */
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { connect } from 'react-redux1sss';
 import { bindActionCreators } from 'redux';
-import toJS from 'components/Hoc/toJsHOC';
+import toJS from 'components1/Hoc/toJsHOC';
 import { Button } from 'antd';
-import * as actions from './actions';
-import styles from './index.less';
+import * as actions from './actions1';
+import styles from './indaaaex.less';
 
 /**
  * DjPage是录单界面,这里不应该控制是否显示,暂时还没想到好的方案,如有时间再继续改进
  * 分别是 按钮组件 明细组件 主录单组件
  */
 @connect(
-    (state, ownProps) => {
+    (state,ownProps) => {
         return { testCom: state.getIn(['num']) },
     },
     (dispatch) => ({
@@ -33,7 +33,7 @@ class TestCom extends Component {
         this.props.actions.add();
     }
     render() {
-        const { num } = this.props;
+        const {num } = this.props;
         return (
             <div>
                 <span>{num}</span>
