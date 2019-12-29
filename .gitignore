@@ -4,7 +4,6 @@ node_modules/
 .idea
 .vscode
 .stylelintcache
-jsconfig.json
 package-lock.json
 #忽略 public
 dist/

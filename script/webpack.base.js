@@ -47,7 +47,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            '@/component': path.resolve(__dirname, '../src/components'),
+            '@components': path.resolve(__dirname, '../src/components'),
         },
         extensions: ['.js', '.jsx', '.css', '.less', '.json'],
     },
@@ -56,9 +56,7 @@ module.exports = {
             {
                 enforce: 'pre',
                 test: /.(js|jsx)$/,
-                exclude: [
-                    path.resolve(__dirname, '../node_modules'),
-                ],
+                exclude: [path.resolve(__dirname, '../node_modules')],
                 loader: 'eslint-loader',
             },
             {
@@ -86,10 +84,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 include: path.resolve(__dirname, '../node_modules'),
-                use: [
-                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-                    'css-loader',
-                ],
+                use: [devMode ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
                 test: /\.less$/,
@@ -121,9 +116,7 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                include: [
-                    path.resolve(__dirname, '../node_modules'),
-                ],
+                include: [path.resolve(__dirname, '../node_modules')],
                 use: [
                     devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
@@ -148,9 +141,7 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: [
-                    'file-loader',
-                ],
+                use: ['file-loader'],
             },
         ],
     },
@@ -170,7 +161,10 @@ module.exports = {
             minifyURLs: true,
         }),
         hardSourceWebpack: new HardSourceWebpackPlugin({
-            cacheDirectory: path.resolve(__dirname, '../node_modules/.cache/hard-source/[confighash]'),
+            cacheDirectory: path.resolve(
+                __dirname,
+                '../node_modules/.cache/hard-source/[confighash]',
+            ),
             environmentHash: {
                 root: process.cwd(),
                 directories: [],
@@ -213,7 +207,7 @@ module.exports = {
         historyApiFallback: true,
         contentBase: './',
         compress: true,
-        host: '0.0.0.0', // 指定使用一个 host。默认是 localhost。如果你希望服务器外部可访问，指定如下：0.0.0.0
+        host: '0.0.0.0',
         port: 3333,
         proxy: {
             '/api': {
@@ -227,8 +221,8 @@ module.exports = {
         'react-dom': 'ReactDOM',
         redux: 'Redux',
         // eslint-disable-next-line quote-props
-        'immutable': 'Immutable',
+        immutable: 'Immutable',
         // eslint-disable-next-line quote-props
-        'moment': 'moment',
+        moment: 'moment',
     },
 };

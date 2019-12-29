@@ -1,0 +1,7 @@
+/* 消除ES7的Decorators报错 */
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    }
+}

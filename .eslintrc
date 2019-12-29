@@ -19,20 +19,28 @@
             "legacyDecorators": true
         }
     },
-    "extends": "airbnb",
+    "extends": [
+        "airbnb",
+        "prettier",
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "prettier/react"
+    ],
     "plugins": ["markdown", "react", "babel"],
     "settings": {
         "import/resolver": {
             "alias": {
                 "map": [
-                    ["@/component", "./src/components"]
+                    ["@components", "./src/components"]
                 ]
             }
         },
-        "react": { "version": "detect" }
+        "react": {
+            "version": "detect"
+        }
     },
     "rules": {
-        "semi": [1],
+        "react/jsx-props-no-spreading": "off",
         "react/jsx-filename-extension": [
             1,
             {
@@ -41,25 +49,6 @@
                     ".jsx"
                 ]
             }
-        ],
-        "comma-dangle": [
-            1,
-            "always-multiline"
-        ],
-        "indent": [
-            "error",
-            4,
-            {
-                "SwitchCase": 1
-            }
-        ],
-        "react/jsx-indent": [
-            "error",
-            4
-        ],
-        "react/jsx-indent-props": [
-            "error",
-            4
         ]
     }
 }
