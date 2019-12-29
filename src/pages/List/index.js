@@ -6,8 +6,8 @@
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\pages\Login\index.js
  */
-const List = () => (
-    'List'
-);
+import React from 'react';
+
+const List = () => <div data-test="list">List</div>;
 
 export default List;
