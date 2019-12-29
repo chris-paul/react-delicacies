@@ -47,9 +47,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            // '@ant-design/icons/lib/dist$':
-            // path.resolve(__dirname, '../src/CommonComponents/antdIcon'),
-            components1: path.resolve(__dirname, '../src/components'),
+            '@/component': path.resolve(__dirname, '../src/components'),
         },
         extensions: ['.js', '.jsx', '.css', '.less', '.json'],
     },

@@ -25,11 +25,7 @@
         "import/resolver": {
             "alias": {
                 "map": [
-                    // ["utils", "./src/utils"],
-                    // ["tools", "./src/utils/toolLib"],
-                    // ["api", "./src/utils/api"],
-                    // ["servers", "./src/servers"],
-                    ["components", "./src/components"]
+                    ["@/component", "./src/components"]
                 ]
             }
         },
@@ -64,7 +60,6 @@
         "react/jsx-indent-props": [
             "error",
             4
-        ],
-        "import/no-unresolved": 0
+        ]
     }
 }
