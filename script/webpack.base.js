@@ -47,18 +47,22 @@ module.exports = {
     },
     resolve: {
         alias: {
-            // api: path.resolve(__dirname, '../src/utils/api'),
-            // utils: path.resolve(__dirname, '../src/utils'),
-            // tools: path.resolve(__dirname, '../src/utils/toolLib'),
-            // images: path.resolve(__dirname, '../src/images'),
-            // servers: path.resolve(__dirname, '../src/servers'),
-            // '@ant-design/icons/lib/dist$': path.resolve(__dirname, '../src/CommonComponents/antdIcon')
-            components: path.resolve(__dirname, '../src/components'),
+            // '@ant-design/icons/lib/dist$':
+            // path.resolve(__dirname, '../src/CommonComponents/antdIcon'),
+            components1: path.resolve(__dirname, '../src/components'),
         },
         extensions: ['.js', '.jsx', '.css', '.less', '.json'],
     },
     module: {
         rules: [
+            {
+                enforce: 'pre',
+                test: /.(js|jsx)$/,
+                exclude: [
+                    path.resolve(__dirname, '../node_modules'),
+                ],
+                loader: 'eslint-loader',
+            },
             {
                 test: /\.js|jsx$/,
                 exclude: path.resolve(__dirname, '../node_modules'),
