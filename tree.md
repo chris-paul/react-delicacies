@@ -1,3 +1,12 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-12-30 09:58:20
+ * @LastEditTime : 2019-12-30 10:14:13
+ * @LastEditors  : Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \react-delicacies\tree.md
+ -->
+<pre>
 react-delicacies
 ├── babel.config.js
 ├── dist
@@ -70,3 +79,4 @@ react-delicacies
 │       ├── cssTransform.js
 │       └── fileTransform.js
 └── tree.md
+</pre>
