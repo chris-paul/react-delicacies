@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-12-28 10:36:51
- * @LastEditTime : 2019-12-28 10:37:08
+ * @LastEditTime : 2019-12-31 18:27:39
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\components\Hoc\toJSHOC.js
@@ -22,9 +22,11 @@ const toJs = WrappedComponent => wrappedComponentProps => {
     const KEY = 0;
     const VALUE = 1;
     const propsJS = Object.entries(wrappedComponentProps)
-        .reduce((newProps, wrappedComponentProp) => {
-            newProps[wrappedComponentProp[KEY]] = Iterable.isIterable(wrappedComponentProp[VALUE]) ? wrappedComponentProp[VALUE].toJS() : wrappedComponentProp[VALUE];
-            return newProps;
+        .reduce((props, wrappedComponentProp) => {
+            return {
+                ...props,
+                [wrappedComponentProp[KEY]]: Iterable.isIterable(wrappedComponentProp[VALUE]) ? wrappedComponentProp[VALUE].toJS() : wrappedComponentProp[VALUE]
+            }
         }, {});
     return <WrappedComponent {...propsJS} />;
 };
