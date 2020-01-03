@@ -32,7 +32,8 @@
         "import/resolver": {
             "alias": {
                 "map": [
-                    ["@components", "./src/components"]
+                    ["@components", "./src/components"],
+                    ["moment", "dayjs"]
                 ]
             }
         },

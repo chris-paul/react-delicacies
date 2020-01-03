@@ -2,7 +2,7 @@
  * @Description: wepack公共配置
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:03
- * @LastEditTime : 2019-12-28 15:19:44
+ * @LastEditTime : 2020-01-03 15:04:05
  * @LastEditors  : Please set LastEditors
  */
 const webpack = require('webpack');
@@ -13,11 +13,14 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HardSourceWebpackPlugin = require('hard-source-webpack-plugin');
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 // eslint-disable-next-line prefer-destructuring
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 const path = require('path');
 
+const nodeEnv = process.env.NODE_ENV || 'development';
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
@@ -146,6 +149,12 @@ module.exports = {
         ],
     },
     plugins: {
+        contextReplacement: new webpack.ContextReplacementPlugin(/moment\/locale$/, /zh-cn/),
+        antdDayjsWebpack: new AntdDayjsWebpackPlugin(),
+        define: new webpack.DefinePlugin({
+            NODE_ENV: JSON.stringify(nodeEnv),
+        }),
+        lodashModuleReplacement: new LodashModuleReplacementPlugin(),
         htmlWebpack: new HtmlWebpackPlugin({
             title: 'zhongshu',
             template: 'public/index.html',
@@ -222,7 +231,5 @@ module.exports = {
         redux: 'Redux',
         // eslint-disable-next-line quote-props
         immutable: 'Immutable',
-        // eslint-disable-next-line quote-props
-        moment: 'moment',
     },
 };

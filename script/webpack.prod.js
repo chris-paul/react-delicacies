@@ -4,7 +4,7 @@
  * @Description: webpack生产环境
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:45
- * @LastEditTime : 2019-12-28 13:49:42
+ * @LastEditTime : 2020-01-03 14:45:37
  * @LastEditors  : Please set LastEditors
  */
 const path = require('path');
@@ -30,6 +30,10 @@ const config = {
     plugins: [
         webpackBase.plugins.cleanWebpack,
         webpackBase.plugins.htmlWebpack,
+        webpackBase.plugins.define,
+        webpackBase.plugins.lodashModuleReplacement,
+        webpackBase.plugins.contextReplacement,
+        webpackBase.plugins.antdDayjsWebpack,
         webpackBase.plugins.miniCssExtract,
         webpackBase.plugins.optimizeCssAssets,
         webpackBase.plugins.progressBarPlugin,
