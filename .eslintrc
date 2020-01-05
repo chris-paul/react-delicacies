@@ -33,6 +33,7 @@
             "alias": {
                 "map": [
                     ["@components", "./src/components"],
+                    ["@api", "./src/server"],
                     ["moment", "dayjs"]
                 ]
             }
