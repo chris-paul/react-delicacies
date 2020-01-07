@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-12-27 15:43:40
- * @LastEditTime : 2019-12-28 13:39:42
+ * @LastEditTime : 2020-01-07 11:07:43
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\index.js
@@ -10,17 +10,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { ConfigProvider } from 'antd';
 import { Provider } from 'react-redux';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { AppContainer } from 'react-hot-loader';
 import Home from './pages/Home';
 import store from './store';
 import './index.less';
 
+moment.locale('zh-cn');
+
 const render = async () => {
     const root = document.getElementById('root');
     ReactDOM.render(
         <AppContainer>
-            <ConfigProvider>
+            <ConfigProvider local={zhCN}>
                 <Provider store={store}>
                     <Home />
                 </Provider>
