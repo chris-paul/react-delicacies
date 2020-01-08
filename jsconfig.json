@@ -2,6 +2,11 @@
 {
     "compilerOptions": {
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true
+        "emitDecoratorMetadata": true,
+        "baseUrl": ".",
+        "paths": {
+            "@components/*": ["./src/components*"],
+            "@api/*": ["./src/server*"]
+        }
     }
 }
