@@ -1,0 +1,15 @@
+sudo: false
+
+language: node_js
+
+node:
+    - v10.9.0
+
+before_script:
+    - npm install
+
+script:
+    - npm run test
+
+after_success:
+    - bash <(curl -s https://codecov.io/bash)
