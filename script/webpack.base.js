@@ -2,7 +2,7 @@
  * @Description: wepack公共配置
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:03
- * @LastEditTime : 2020-01-07 11:14:24
+ * @LastEditTime : 2020-01-12 07:06:46
  * @LastEditors  : Please set LastEditors
  */
 const webpack = require('webpack');
@@ -57,12 +57,6 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                enforce: 'pre',
-                test: /.(js|jsx)$/,
-                exclude: [path.resolve(__dirname, '../node_modules')],
-                loader: 'eslint-loader',
-            },
             {
                 test: /\.js|jsx$/,
                 exclude: path.resolve(__dirname, '../node_modules'),
