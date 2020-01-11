@@ -7,3 +7,4 @@ node_modules/
 package-lock.json
 #忽略 public
 dist/
+coverage/
