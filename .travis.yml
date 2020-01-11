@@ -1,4 +1,4 @@
-sudo: false
+sudo: required
 
 language: node_js
 
@@ -13,9 +13,7 @@ before_script:
     - npm install
 
 script:
-    - npm run test
-
-after_script: npm run coverage
+    - npm run test && npm run report-coverage
 
 after_success:
     - bash <(curl -s https://codecov.io/bash)
