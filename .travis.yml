@@ -13,7 +13,7 @@ before_script:
     - npm install
 
 script:
-    - npm run test && npm run report
+    - npm run test && npm run coverage
 
 after_success:
     - bash <(curl -s https://codecov.io/bash)
