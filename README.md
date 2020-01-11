@@ -2,11 +2,11 @@
  * @Description: zhongshu React PC
  * @Author: 廉恒凯
  * @Date: 2019-08-24 10:38:04
- * @LastEditTime : 2020-01-11 22:53:39
+ * @LastEditTime : 2020-01-11 23:30:27
  * @LastEditors  : Please set LastEditors
  -->
 
-[![Build Status](https://travis-ci.org/chris-paul/react-delicacies.svg?branch=master)](https://travis-ci.org/chris-paul/react-delicacies) [![codecov](https://codecov.io/gh/leobuzhi/asjson/branch/master/graph/badge.svg)](https://codecov.io/gh/leobuzhi/asjson)
+[![Build Status](https://travis-ci.org/chris-paul/react-delicacies.svg?branch=master)](https://travis-ci.org/chris-paul/react-delicacies) [![codecov](https://codecov.io/gh/chris-paul/react-delicacies/branch/master/graph/badge.svg)](https://codecov.io/gh/chris-paul/react-delicacies)
 
 ### 文档维护
 
