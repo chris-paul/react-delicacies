@@ -32,5 +32,7 @@ module.exports = {
         '^.+\\.module\\.(css|less|sass|scss)$',
         '<rootDir>/node_modules/',
     ],
+    roots: ['<rootDir>/src'],
+    modulePaths: ['<rootDir>/src'],
     testURL: 'http://localhost:7001',
 };
