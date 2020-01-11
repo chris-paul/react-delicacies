@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-12-28 09:55:20
- * @LastEditTime : 2020-01-03 14:35:03
+ * @LastEditTime : 2020-01-12 07:04:00
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\babel.config.js
@@ -22,13 +22,11 @@ const presets = [
             corejs: 2,
         },
     ],
-    [
-        '@babel/preset-react',
-    ],
+    ['@babel/preset-react'],
 ];
 
 const plugins = [
-    ["lodash"],
+    ['lodash'],
     [
         '@babel/plugin-proposal-decorators',
         {
@@ -37,13 +35,13 @@ const plugins = [
     ],
     ['@babel/plugin-proposal-class-properties'],
     ['@babel/plugin-transform-runtime'],
-    ['@babel/plugin-syntax-dynamic-import']
-    ,
+    ['@babel/plugin-syntax-dynamic-import'],
 ];
 
 if (NODE_ENV !== 'test') {
     plugins.push(['import', { libraryName: 'antd', libraryDirectory: 'es', style: 'css' }]);
-} else if(NODE_ENV !== 'production') {
+}
+if (NODE_ENV !== 'production') {
     plugins.push(['react-hot-loader/babel']);
 }
 

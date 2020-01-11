@@ -2,7 +2,7 @@
  * @Description: wepack公共配置
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:03
- * @LastEditTime : 2020-01-12 07:06:46
+ * @LastEditTime : 2020-01-12 07:10:35
  * @LastEditors  : Please set LastEditors
  */
 const webpack = require('webpack');
@@ -52,6 +52,7 @@ module.exports = {
         alias: {
             '@components': path.resolve(__dirname, '../src/components'),
             '@api': path.resolve(__dirname, '../src/server'),
+            '@tests': path.resolve(__dirname, '../tests'),
         },
         extensions: ['.js', '.jsx', '.css', '.less', '.json'],
     },
