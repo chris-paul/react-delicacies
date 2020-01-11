@@ -4,12 +4,9 @@ module.exports = {
     moduleFileExtensions: ['js', 'ts', 'tsx', 'json', 'jsx', 'node'],
     moduleNameMapper: {
         '^.+\\.(css|sass|scss)$': 'identity-obj-proxy',
-        '^utils/(.*)$': '<rootDir>/src/utils/$1',
-        '^api(.*)$': '<rootDir>/src/utils/api',
-        '^tools(.*)$': '<rootDir>/src/utils/toolLib',
-        '^servers(.*)$': '<rootDir>/src/servers/index',
-        '^logicComponents/(.*)$': '<rootDir>/src/logicComponents/$1',
-        '^commonComponents/(.*)$': '<rootDir>/src/commonComponents/$1',
+        '^@api(.*)$': '<rootDir>/src/server',
+        '^@tests/(.*)$': '<rootDir>/tests/$1',
+        '^@components/(.*)$': '<rootDir>/src/components/$1',
     },
     setupFilesAfterEnv: [
         '<rootDir>/node_modules/jest-enzyme/lib/index.js',
