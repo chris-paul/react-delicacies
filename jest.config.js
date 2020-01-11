@@ -11,7 +11,10 @@ module.exports = {
         '^logicComponents/(.*)$': '<rootDir>/src/logicComponents/$1',
         '^commonComponents/(.*)$': '<rootDir>/src/commonComponents/$1',
     },
-    setupFilesAfterEnv: ['./node_modules/jest-enzyme/lib/index.js', '<rootDir>/tests/setup'],
+    setupFilesAfterEnv: [
+        '<rootDir>/node_modules/jest-enzyme/lib/index.js',
+        '<rootDir>/tests/setUp',
+    ],
     testEnvironment: 'jest-environment-jsdom-fourteen',
     testMatch: [
         '<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}',
@@ -32,5 +35,7 @@ module.exports = {
         '^.+\\.module\\.(css|less|sass|scss)$',
         '<rootDir>/node_modules/',
     ],
+    roots: ['<rootDir>/src'],
+    modulePaths: ['<rootDir>/src'],
     testURL: 'http://localhost:7001',
 };
