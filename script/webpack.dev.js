@@ -2,7 +2,7 @@
  * @Description: webpack开发模式
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:14
- * @LastEditTime : 2020-01-07 11:15:19
+ * @LastEditTime : 2020-01-12 07:06:15
  * @LastEditors  : Please set LastEditors
  */
 const path = require('path');
@@ -29,7 +29,6 @@ module.exports = {
         webpackBase.plugins.namedModules,
         webpackBase.plugins.hotModuleReplacement,
         webpackBase.plugins.hardSourceWebpack,
-        webpackBase.plugins.bundleAnalyzer,
     ],
     devServer: webpackBase.devServer,
     externals: webpackBase.externals,

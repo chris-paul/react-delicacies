@@ -34,6 +34,7 @@
                 "map": [
                     ["@components", "./src/components"],
                     ["@api", "./src/server"],
+                    ["@tests", "./tests"],
                     ["moment", "dayjs"]
                 ]
             }

@@ -2,61 +2,63 @@
  * @Description: zhongshu React PC
  * @Author: 廉恒凯
  * @Date: 2019-08-24 10:38:04
- * @LastEditTime : 2019-12-30 10:31:15
+ * @LastEditTime : 2020-01-12 06:33:13
  * @LastEditors  : Please set LastEditors
  -->
 
+![npm](https://img.shields.io/npm/v/node.svg?style=flat-square) ![node](https://img.shields.io/badge/node.js-%3E=_10.0-green.svg?style=flat-square) [![Build Status](https://travis-ci.org/chris-paul/react-delicacies.svg?branch=master)](https://travis-ci.org/chris-paul/react-delicacies) [ ![codecov](https://codecov.io/gh/chris-paul/react-delicacies/branch/master/graph/badge.svg)](https://codecov.io/gh/chris-paul/react-delicacies)
+
 ### 文档维护
 
-+  **开发前阅读doc目录下README.md,并阅读开发文档**
+-   **开发前阅读 doc 目录下 README.md,并阅读开发文档**
 
 ### 预览地址
 
-+ 测试库: localhost:3333
+-   测试库: localhost:3333
 
 ### 本地环境依赖
 
-+ node: v10.0.0以上版本
+-   node: v10.0.0 以上版本
 
-+ npm: 6.2.0以上版本
+-   npm: 6.2.0 以上版本
 
-### 编辑器插件安装(推荐Vscode)
+### 编辑器插件安装(推荐 Vscode)
 
-+ Beautify
+-   Beautify
 
-+ Beautify css/sass/scss/less
+-   Beautify css/sass/scss/less
 
-+ EditorConfig
+-   EditorConfig
 
-+ Beautify css/sass/scss/less
+-   Beautify css/sass/scss/less
 
-+ ESLint
+-   ESLint
 
-+ stylelint
+-   stylelint
 
-+ Bracket Pair Colorizer(颜色识别匹配括号)
+-   Bracket Pair Colorizer(颜色识别匹配括号)
 
-+ Document This(注释)
+-   Document This(注释)
 
-+ koroFileHeader(头文件注释)
+-   koroFileHeader(头文件注释)
 
-+ Markdown
+-   Markdown
 
-+ JavaScript (ES6) code snippets(es6代码片段)
+-   JavaScript (ES6) code snippets(es6 代码片段)
 
-+ ES7 React/Redux/GraphQL/React-Native snippets
+-   ES7 React/Redux/GraphQL/React-Native snippets
 
-+ React-Native/React/Redux snippets for es6/es7(React代码片段)
+-   React-Native/React/Redux snippets for es6/es7(React 代码片段)
 
-+ vscode-icons
+-   vscode-icons
 
-+ Local History (查看历史记录)
+-   Local History (查看历史记录)
 
-+ EditorConfig 配置
+-   EditorConfig 配置
 
-+ Monokai Pro/One Dark Pro(个人非常喜欢的一个主题)
+-   Monokai Pro/One Dark Pro(个人非常喜欢的一个主题)
 
-+ Prettier - Code formatter(代码格式化)
+-   Prettier - Code formatter(代码格式化)
 
 ```javascript
 
@@ -71,7 +73,7 @@ trim_trailing_whitespace = true
 
 ```
 
-+ jsconfig.json配置
+-   jsconfig.json 配置
 
 ```javascript
 {
@@ -81,16 +83,17 @@ trim_trailing_whitespace = true
     }
 }
 ```
-+ Prettier(修改 eslint setting.json 自动保存)
+
+-   Prettier(修改 eslint setting.json 自动保存)
 
 ```javascript
 // 编辑器配置加这一行
 "editor.formatOnSave": true
 ```
 
-### 编码规范(继承自airbnb)
+### 编码规范(继承自 airbnb)
 
-+ 强烈建议打开eslint代码检测
+-   强烈建议打开 eslint 代码检测
 
 ### 项目运行
 
