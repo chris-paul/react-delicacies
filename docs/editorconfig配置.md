@@ -1,12 +1,13 @@
 <!--
- * @Author: your name
+ * @Author: 廉恒凯
  * @Date: 2019-12-27 14:40:20
- * @LastEditTime: 2019-12-27 14:40:44
- * @LastEditors: your name
- * @Description: In User Settings Edit
+ * @LastEditTime: 2020-04-11 15:49:01
+ * @LastEditors: 廉恒凯
+ * @Description: editorconfig
  * @FilePath: \react-delicacies\docs\editorconfig配置.md
  -->
-### 安装扩展editorconfig(cmd+shift+p)
+
+### 安装扩展 editorconfig(cmd+shift+p)
 
 ```javascript
 /* 这是项目的根目录 */
