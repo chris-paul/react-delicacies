@@ -2,8 +2,8 @@
  * @Description: wepack公共配置
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:03
- * @LastEditTime : 2020-01-12 07:10:35
- * @LastEditors  : Please set LastEditors
+ * @LastEditTime: 2020-04-11 20:23:23
+ * @LastEditors: 廉恒凯
  */
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -106,8 +106,8 @@ module.exports = {
                         options: {
                             sourceMap: true,
                             resources: [
-                                path.resolve(__dirname, '../src/globalStyles/variables.less'),
-                                path.resolve(__dirname, '../src/globalStyles/mixins.less'),
+                                path.resolve(__dirname, '../src/styles/variables.less'),
+                                path.resolve(__dirname, '../src/styles/mixins.less'),
                             ],
                         },
                     },
@@ -140,7 +140,15 @@ module.exports = {
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: ['file-loader'],
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'iconFont/',
+                            publicPath: '/iconFont',
+                        },
+                    },
+                ],
             },
         ],
     },

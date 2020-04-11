@@ -4,8 +4,8 @@
  * @Description: webpack生产环境
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:45
- * @LastEditTime : 2020-01-07 11:15:10
- * @LastEditors  : Please set LastEditors
+ * @LastEditTime: 2020-04-11 20:28:55
+ * @LastEditors: 廉恒凯
  */
 const path = require('path');
 const webpackBase = require('./webpack.base');
@@ -37,6 +37,7 @@ const config = {
         webpackBase.plugins.miniCssExtract,
         webpackBase.plugins.optimizeCssAssets,
         webpackBase.plugins.progressBarPlugin,
+        webpackBase.plugins.bundleAnalyzer,
     ],
     externals: webpackBase.externals,
 };
