@@ -1,13 +1,12 @@
 <!--
- * @Description: zhongshu React PC
+ * @Description: REACT-DELICACIES
  * @Author: 廉恒凯
  * @Date: 2019-08-24 10:38:04
- * @LastEditTime : 2020-01-14 09:57:35
- * @LastEditors  : Please set LastEditors
+ * @LastEditTime: 2020-04-11 15:53:55
+ * @LastEditors: 廉恒凯
  -->
 
 ![npm](https://img.shields.io/npm/v/node.svg?style=flat-square) ![node](https://img.shields.io/badge/node.js-%3E=_10.0-green.svg?style=flat-square) [![Build Status](https://travis-ci.org/chris-paul/react-delicacies.svg?branch=master)](https://travis-ci.org/chris-paul/react-delicacies) [ ![codecov](https://codecov.io/gh/chris-paul/react-delicacies/branch/master/graph/badge.svg)](https://codecov.io/gh/chris-paul/react-delicacies)
-
 
 ### 编辑器插件安装(推荐 Vscode)
 
@@ -47,7 +46,7 @@
 
 -   Prettier - Code formatter(代码格式化)
 
-```javascript
+```
 
 root = true
 [*]
@@ -59,16 +58,17 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 
 ```
+
 -   Prettier(修改 eslint setting.json 自动保存)
 
-```javascript
+```
 // 编辑器配置加这一行
 "editor.formatOnSave": true
 ```
 
 ### 项目运行
 
-```javascript
+```
 
 $ git clone
 
