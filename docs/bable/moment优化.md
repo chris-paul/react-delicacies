@@ -1,12 +1,13 @@
 <!--
- * @Author: your name
+ * @Author: 廉恒凯
  * @Date: 2020-01-03 11:44:58
- * @LastEditTime : 2020-01-03 11:53:53
- * @LastEditors  : Please set LastEditors
- * @Description: In User Settings Edit
+ * @LastEditTime: 2020-04-11 15:41:05
+ * @LastEditors: 廉恒凯
+ * @Description: moment替换为dayjs
  * @FilePath: \react-delicacies\docs\bable\moment优化.md
  -->
-### moment 是一个很大的包，很多antd的时间组件需要依赖moment的转换,我们替换为dayjs
+
+### moment 是一个很大的包，很多 antd 的时间组件需要依赖 moment 的转换,我们替换为 dayjs
 
 ```javascript
 /* 取消moment */
@@ -20,10 +21,6 @@ plugins: [
     new AntdDayjsWebpackPlugin();
 ]
 
-/* 修改webpack别名,无缝替换 */
-alias: {
-    moment: 'dayjs',
-}
 /*  入口引入中文包 */
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -46,4 +43,3 @@ const render = async () => {
 };
 render();
 ```
-
