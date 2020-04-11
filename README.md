@@ -2,7 +2,7 @@
  * @Description: REACT-DELICACIES
  * @Author: 廉恒凯
  * @Date: 2019-08-24 10:38:04
- * @LastEditTime: 2020-04-11 15:53:55
+ * @LastEditTime: 2020-04-11 21:16:59
  * @LastEditors: 廉恒凯
  -->
 
@@ -45,6 +45,8 @@
 -   Monokai Pro/One Dark Pro(个人非常喜欢的一个主题)
 
 -   Prettier - Code formatter(代码格式化)
+
+-   vscode-flow-ide(解决 VSCode 使用 Flow 的 bug)
 
 ```
 

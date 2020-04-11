@@ -1,6 +1,14 @@
+/*
+ * @Author: 廉恒凯
+ * @Date: 2019-12-29 16:38:11
+ * @LastEditors: 廉恒凯
+ * @LastEditTime: 2020-04-11 21:07:30
+ * @Description: file content
+ */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { Menu, Icon } from 'antd';
+import { Menu } from 'antd';
+import { HomeOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { PropTypes } from 'prop-types';
 
 class Index extends Component {
@@ -48,11 +56,11 @@ class Index extends Component {
                 }}
             >
                 <Menu.Item key="/list">
-                    <Icon type="home" />
+                    <HomeOutlined />
                     <span>工作台</span>
                 </Menu.Item>
                 <Menu.Item key="/work">
-                    <Icon type="shopping-cart" />
+                    <ShoppingCartOutlined />
                     <span>订单管理</span>
                 </Menu.Item>
             </Menu>
