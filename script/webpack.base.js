@@ -2,7 +2,7 @@
  * @Description: wepack公共配置
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:03
- * @LastEditTime: 2020-04-11 20:23:23
+ * @LastEditTime: 2020-04-11 22:40:04
  * @LastEditors: 廉恒凯
  */
 const webpack = require('webpack');
@@ -18,6 +18,8 @@ const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+
 const path = require('path');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
@@ -204,7 +206,13 @@ module.exports = {
             chunkFilename: 'css/[name].[hash].css',
             ignoreOrder: false,
         }),
-        namedModules: new webpack.NamedModulesPlugin(),
+        compressionPlugin: new CompressionPlugin({
+            filename: '[path].gz[query]',
+            algorithm: 'gzip',
+            test: /\.js$|\.css$|\.jsx$|\.less$|\.html$/,
+            threshold: 10240,
+            minRatio: 0.8
+        }),
         optimizeCssAssets: new OptimizeCssAssetsPlugin(),
         bundleAnalyzer: new BundleAnalyzerPlugin({
             analyzerMode: 'disabled',
