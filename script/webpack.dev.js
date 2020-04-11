@@ -2,8 +2,8 @@
  * @Description: webpack开发模式
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:14
- * @LastEditTime : 2020-01-12 07:06:15
- * @LastEditors  : Please set LastEditors
+ * @LastEditTime: 2020-04-11 22:30:37
+ * @LastEditors: 廉恒凯
  */
 const path = require('path');
 const webpackBase = require('./webpack.base');
@@ -20,13 +20,11 @@ module.exports = {
     module: webpackBase.module,
     plugins: [
         webpackBase.plugins.htmlWebpack,
-        webpackBase.plugins.htmlWebpack,
         webpackBase.plugins.define,
         webpackBase.plugins.lodashModuleReplacement,
         webpackBase.plugins.contextReplacement,
         webpackBase.plugins.antdDayjsWebpack,
         webpackBase.plugins.miniCssExtract,
-        webpackBase.plugins.namedModules,
         webpackBase.plugins.hotModuleReplacement,
         webpackBase.plugins.hardSourceWebpack,
     ],

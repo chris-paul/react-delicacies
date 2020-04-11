@@ -4,7 +4,7 @@
  * @Description: webpack生产环境
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:45
- * @LastEditTime: 2020-04-11 20:28:55
+ * @LastEditTime: 2020-04-11 22:40:28
  * @LastEditors: 廉恒凯
  */
 const path = require('path');
@@ -36,6 +36,7 @@ const config = {
         webpackBase.plugins.antdDayjsWebpack,
         webpackBase.plugins.miniCssExtract,
         webpackBase.plugins.optimizeCssAssets,
+        webpackBase.plugins.compressionPlugin,
         webpackBase.plugins.progressBarPlugin,
         webpackBase.plugins.bundleAnalyzer,
     ],
