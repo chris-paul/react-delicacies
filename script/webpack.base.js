@@ -2,7 +2,7 @@
  * @Description: wepack公共配置
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:03
- * @LastEditTime: 2020-04-11 22:40:04
+ * @LastEditTime: 2020-04-12 17:53:45
  * @LastEditors: 廉恒凯
  */
 const webpack = require('webpack');
@@ -194,6 +194,7 @@ module.exports = {
                 sizeThreshold: 50 * 1024 * 1024,
             },
         }),
+        hashModuleIds: new webpack.HashedModuleIdsPlugin(),
         styleLint: new StyleLintPlugin({
             files: ['./src/**/*.less'],
             fix: false,
@@ -202,9 +203,9 @@ module.exports = {
         }),
         cleanWebpack: new CleanWebpackPlugin(),
         miniCssExtract: new MiniCssExtractPlugin({
-            filename: 'css/[name].[hash].css',
-            chunkFilename: 'css/[name].[hash].css',
-            ignoreOrder: false,
+            filename: 'css/[name].[contenthash].css',
+            chunkFilename: 'css/[name].[contenthash].css',
+            // ignoreOrder: false,
         }),
         compressionPlugin: new CompressionPlugin({
             filename: '[path].gz[query]',
