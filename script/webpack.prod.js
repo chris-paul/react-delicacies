@@ -4,7 +4,7 @@
  * @Description: webpack生产环境
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:45
- * @LastEditTime: 2020-04-11 22:40:28
+ * @LastEditTime: 2020-04-12 18:03:43
  * @LastEditors: 廉恒凯
  */
 const path = require('path');
@@ -20,7 +20,7 @@ const config = {
         app: [path.resolve(__dirname, '../src/index.js')],
     },
     output: {
-        filename: 'js/[name].[hash].js',
+        filename: 'js/[name].[contenthash].js',
         hashDigestLength: 7,
         path: path.resolve(__dirname, '../dist'),
         publicPath: './',
@@ -38,6 +38,7 @@ const config = {
         webpackBase.plugins.optimizeCssAssets,
         webpackBase.plugins.compressionPlugin,
         webpackBase.plugins.progressBarPlugin,
+        webpackBase.plugins.hashModuleIds,
         webpackBase.plugins.bundleAnalyzer,
     ],
     externals: webpackBase.externals,
