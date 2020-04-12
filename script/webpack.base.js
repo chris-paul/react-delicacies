@@ -2,7 +2,7 @@
  * @Description: wepack公共配置
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:03
- * @LastEditTime: 2020-04-12 21:26:13
+ * @LastEditTime: 2020-04-12 21:37:51
  * @LastEditors: 廉恒凯
  */
 const webpack = require('webpack');
@@ -162,7 +162,7 @@ module.exports = {
         }),
         lodashModuleReplacement: new LodashModuleReplacementPlugin(),
         htmlWebpack: new HtmlWebpackPlugin({
-            title: 'zhongshu',
+            title: 'react-declicacies',
             template: 'public/index.html',
             removeComments: true,
             collapseWhitespace: true,
