@@ -2,7 +2,7 @@
  * @Description: webpack开发模式
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:14
- * @LastEditTime: 2020-04-11 22:30:37
+ * @LastEditTime: 2020-04-12 21:26:26
  * @LastEditors: 廉恒凯
  */
 const path = require('path');
@@ -20,6 +20,7 @@ module.exports = {
     module: webpackBase.module,
     plugins: [
         webpackBase.plugins.htmlWebpack,
+        webpackBase.plugins.nameModule,
         webpackBase.plugins.define,
         webpackBase.plugins.lodashModuleReplacement,
         webpackBase.plugins.contextReplacement,
