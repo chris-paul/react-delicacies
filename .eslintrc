@@ -11,7 +11,7 @@
         "__dirname": true
     },
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": 2018,
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true,
@@ -21,13 +21,13 @@
     },
     "extends": [
         "airbnb",
-        "prettier",
+        "plugin:prettier/recommended",
         "plugin:jest/recommended",
         "eslint:recommended",
         "plugin:react/recommended",
         "prettier/react"
     ],
-    "plugins": ["markdown", "react", "babel", "jest"],
+    "plugins": ["markdown", "react", "babel", "react-hooks", "jest"],
     "settings": {
         "import/resolver": {
             "alias": {
@@ -44,14 +44,12 @@
         }
     },
     "rules": {
+        "react-hooks/rules-of-hooks": "error",
         "react/jsx-props-no-spreading": "off",
         "react/jsx-filename-extension": [
             1,
             {
-                "extensions": [
-                    ".js",
-                    ".jsx"
-                ]
+                "extensions": [".js", ".jsx"]
             }
         ]
     }
