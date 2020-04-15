@@ -5,3 +5,6 @@ dist/
 .DS_Store
 .editorconfig
 .eslintignore
+node_modules
+dist
+

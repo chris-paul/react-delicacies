@@ -11,8 +11,18 @@
         "coverage": "cross-env NODE_ENV=test jest --colors --coverage --watchAll=false",
         "report": "webpack-bundle-analyzer --port 4200 dist/stats.json",
         "start": "cross-env NODE_ENV=development webpack-dev-server --open --config script/webpack.dev.js --progress",
-        "startMock": "cross-env NODE_ENV=mockDevelopment webpack-dev-server --open --config script/webpack.dev.js --progress",
-        "precommit": "npm run eslint"
+        "startMock": "cross-env NODE_ENV=mockDevelopment webpack-dev-server --open --config script/webpack.dev.js --progress"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+            "eslint --fix",
+            "git add"
+        ]
     },
     "repository": {
         "type": "git",
@@ -49,7 +59,7 @@
         "enzyme-adapter-react-16": "^1.15.2",
         "eslint": "^6.8.0",
         "eslint-config-airbnb": "^18.0.1",
-        "eslint-config-prettier": "^6.9.0",
+        "eslint-config-prettier": "^6.10.1",
         "eslint-config-standard": "^14.1.0",
         "eslint-import-resolver-alias": "^1.1.2",
         "eslint-loader": "^3.0.3",
@@ -58,8 +68,10 @@
         "eslint-plugin-jsx-a11y": "^6.2.3",
         "eslint-plugin-markdown": "^1.0.1",
         "eslint-plugin-node": "^11.0.0",
+        "eslint-plugin-prettier": "^3.1.3",
         "eslint-plugin-promise": "^4.2.1",
         "eslint-plugin-react": "^7.17.0",
+        "eslint-plugin-react-hooks": "^3.0.0",
         "eslint-plugin-standard": "^4.0.1",
         "file-loader": "^5.0.2",
         "husky": "^3.1.0",
@@ -69,10 +81,9 @@
         "jest-environment-jsdom-fourteen": "^1.0.1",
         "jest-enzyme": "^7.1.2",
         "less-loader": "^5.0.0",
+        "lint-staged": "^10.1.3",
         "npm": "^6.13.4",
         "prettier": "^1.19.1",
-        "prettier-eslint": "^9.0.1",
-        "prettier-eslint-cli": "^5.0.0",
         "react-app-polyfill": "^1.0.5",
         "react-hot-loader": "^4.12.18",
         "speed-measure-webpack-plugin": "^1.3.1",
