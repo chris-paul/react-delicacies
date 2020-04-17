@@ -51,6 +51,7 @@
             {
                 "extensions": [".js", ".jsx"]
             }
-        ]
+        ],
+        "eslint-disable-next-line": "off",
     }
 }

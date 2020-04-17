@@ -79,7 +79,7 @@ export const isLength = value => {
  * @return:
  */
 export const isArrayLike = value => {
-    return value != null && this.isLength(value.length) && !this.isFunction(value);
+    return value != null && isLength(value.length) && !isFunction(value);
 };
 
 /**
