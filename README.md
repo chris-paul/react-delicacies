@@ -56,7 +56,7 @@
 
 ```javascript
 // mock环境运行，
-npm run startMock
+npm run start:mock
 // dev环境运行
 npm run start
 // 代码打包压缩
@@ -67,6 +67,8 @@ npm run report
 npm run coverage
 // 运行测试用例
 npm run test
+// watch模式运行测试用例
+npm run test:watch
 // css代码检测
 npm run csslint
 // js,jsx代码检测
