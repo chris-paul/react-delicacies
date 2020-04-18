@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2019-12-29 16:38:11
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-11 21:07:30
+ * @LastEditTime: 2020-04-18 18:43:08
  * @Description: file content
  */
 import React, { Component } from 'react';
@@ -15,7 +15,7 @@ class Index extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selectedKeys: ['/dashboard'],
+            selectedKeys: ['/list'],
             // 当前页面路径
             pathname: '',
         };
@@ -48,7 +48,7 @@ class Index extends Component {
             <Menu
                 theme="light"
                 mode="inline"
-                defaultOpenKeys={['/dashboard']}
+                defaultOpenKeys={['/list']}
                 selectedKeys={selectedKeys}
                 onClick={({ key }) => {
                     history.push(key);

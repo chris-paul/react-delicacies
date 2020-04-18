@@ -2,7 +2,7 @@
  * @Description: wepack公共配置
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:03
- * @LastEditTime: 2020-04-12 21:37:51
+ * @LastEditTime: 2020-04-18 22:06:22
  * @LastEditors: 廉恒凯
  */
 const webpack = require('webpack');
@@ -213,7 +213,7 @@ module.exports = {
             algorithm: 'gzip',
             test: /\.js$|\.css$|\.jsx$|\.less$|\.html$/,
             threshold: 10240,
-            minRatio: 0.8
+            minRatio: 0.8,
         }),
         optimizeCssAssets: new OptimizeCssAssetsPlugin(),
         bundleAnalyzer: new BundleAnalyzerPlugin({
@@ -228,7 +228,7 @@ module.exports = {
         hot: true,
         inline: true,
         historyApiFallback: true,
-        contentBase: './',
+        contentBase: path.join(__dirname, '../public'),
         compress: true,
         host: '0.0.0.0',
         port: 3333,

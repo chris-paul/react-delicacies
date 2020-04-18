@@ -2,7 +2,7 @@
  * @Description: webpack开发模式
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:14
- * @LastEditTime: 2020-04-12 21:26:26
+ * @LastEditTime: 2020-04-18 21:31:12
  * @LastEditors: 廉恒凯
  */
 const path = require('path');
@@ -25,9 +25,8 @@ module.exports = {
         webpackBase.plugins.lodashModuleReplacement,
         webpackBase.plugins.contextReplacement,
         webpackBase.plugins.antdDayjsWebpack,
-        webpackBase.plugins.miniCssExtract,
+        // webpackBase.plugins.hardSourceWebpack,
         webpackBase.plugins.hotModuleReplacement,
-        webpackBase.plugins.hardSourceWebpack,
     ],
     devServer: webpackBase.devServer,
     externals: webpackBase.externals,
