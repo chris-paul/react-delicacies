@@ -1,24 +1,19 @@
 /*
- * @Author: your name
+ * @Author: 廉恒凯
  * @Date: 2019-12-28 10:16:47
- * @LastEditTime: 2020-04-18 13:03:19
+ * @LastEditTime: 2020-04-18 16:54:16
  * @LastEditors: 廉恒凯
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\pages\Login\index.js
  */
+import React from 'react';
+import Counter from '@components/Counter';
 
-import { Component } from 'react';
-import list from '@api';
+const List = () => (
+    <div data-test="list">
+        <h1>Counter List</h1>
+        <Counter data-test="listCounter" />
+    </div>
+);
 
-class List extends Component {
-    async componentDidMount() {
-        const { data } = await list.getInitList();
-        // eslint-disable-next-line no-console
-        console.info(data);
-    }
-
-    render() {
-        return 'list';
-    }
-}
 export default List;
