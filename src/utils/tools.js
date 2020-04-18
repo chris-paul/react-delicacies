@@ -88,33 +88,27 @@ export const isArrayLike = value => {
  * @return:
  */
 export const isEmpty = value => {
-    if (this.isString(value)) {
+    if (isString(value)) {
         /* 去掉空格 */
         const replaceStr = value.replace(/(^\s*)|(\s*$)/g, '');
-        if (
-            replaceStr === '' ||
-            replaceStr === null ||
-            replaceStr === 'null' ||
-            replaceStr === undefined ||
-            replaceStr === 'undefined'
-        ) {
+        if (replaceStr === '' || replaceStr === 'null' || replaceStr === 'undefined') {
             return true;
         }
         return false;
     }
-    if (this.isNumber(value)) {
-        return this.isNaN(value);
+    if (isNumber(value)) {
+        return Number.isNaN(value);
     }
-    if (this.isBoolean(value)) {
+    if (isBoolean(value)) {
         return false;
     }
-    if (this.isUndefined(value) || this.isNull(value)) {
+    if (isUndefined(value) || isNull(value)) {
         return true;
     }
-    if (this.isArrayLike(value)) {
+    if (isArrayLike(value)) {
         return !value.length;
     }
-    if (this.isObject(value)) {
+    if (isObject(value)) {
         return Object.keys(value).length === 0;
     }
     return false;

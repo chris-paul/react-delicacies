@@ -1,12 +1,11 @@
 /*
  * @Author: 廉恒凯
  * @Date: 2020-01-12 06:39:48
- * @LastEditTime: 2020-04-17 21:56:53
+ * @LastEditTime: 2020-04-18 11:40:09
  * @LastEditors: 廉恒凯
- * @Description: In User Settings Edit
+ * @Description: test Utils
  * @FilePath: /react-delicacies/src/utils/tests/tools.test.js
  */
-// import { symbol, slice } from '@tests/utils/tools';
 import * as tools from '../tools';
 
 let undefinedVar;
@@ -172,7 +171,6 @@ describe('tools utils', () => {
     describe('getRawType', () => {
         test.each([
             [() => {}, 'Function', '(shoule Function when input is function)'],
-            // // eslint-disable-next-line func-names
             [true, 'Boolean', '(shoule Boolean when input is boolean)'],
             [null, 'Null', '(shoule Null when input is null)'],
             [undefinedVar, 'Undefined', '(shoule Undefined when input is undefined)'],
@@ -219,13 +217,37 @@ describe('tools utils', () => {
         });
 
         it('should return `false` for length', () => {
-            const argu = (function(...args) {
+            const argu = (function test(...args) {
                 return args;
             })(1, 2, 3);
             expect(tools.isArrayLike(argu)).toBeTruthy();
             expect(tools.isArrayLike('a')).toBeTruthy();
             expect(tools.isArrayLike([1, 2, 3])).toBeTruthy();
             expect(tools.isArrayLike({ '0': 1, length: 1 })).toBeTruthy();
+        });
+    });
+
+    describe('isEmpty', () => {
+        test.each([
+            ['', true, '(shoule true when input is empty string)'],
+            [' ', true, '(shoule true when input is empty string with space)'],
+            ['null', true, '(shoule true when input is string null)'],
+            [null, true, '(shoule true when input is null)'],
+            ['undefined', true, '(shoule true when input is string undefined)'],
+            [undefinedVar, true, '(shoule true when input is undefined)'],
+            ['a', false, '(shoule false when input is string)'],
+            [0, false, '(shoule false when input is number)'],
+            [NaN, true, '(shoule true when input is NaN)'],
+            [true, false, '(shoule false when input is boolean)'],
+            [[1, 2, 3], false, '(shoule false when input is arrayLike)'],
+            [new Date(), false, '(shoule false when input is Date Object)'],
+            [Object('a'), false, '(shoule false when input is String Object)'],
+            [new Error(), false, '(shoule false when input is Error Object)'],
+            [() => {}, false, '(shoule false when input is function)'],
+            [/x/, false, '(shoule false when input is RegExp)'],
+            [Symbol('a'), false, '(shoule false when input is symbol)'],
+        ])(`when input is %s should return %s (%s)`, (input, expected) => {
+            expect(tools.isEmpty(input)).toBe(expected);
         });
     });
 });
