@@ -60,6 +60,7 @@
         "enzyme-adapter-react-16": "^1.15.2",
         "eslint": "^6.8.0",
         "eslint-config-airbnb": "^18.0.1",
+        "eslint-config-jest-enzyme": "^7.1.2",
         "eslint-config-prettier": "^6.10.1",
         "eslint-config-standard": "^14.1.0",
         "eslint-import-resolver-alias": "^1.1.2",
