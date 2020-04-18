@@ -1,8 +1,8 @@
 /*
  * @Author: lhk
  * @Date: 2019-12-28 10:15:07
- * @LastEditTime : 2019-12-28 10:16:37
- * @LastEditors  : Please set LastEditors
+ * @LastEditTime: 2020-04-18 12:49:26
+ * @LastEditors: 廉恒凯
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\router\routeConfig.js
  */
@@ -10,18 +10,18 @@
 import React, { lazy } from 'react';
 import { Route } from 'react-router-dom';
 
-const List = lazy(() => import(/* webpackChunkName: "list" */ '../pages/List'));
-const Work = lazy(() => import(/* webpackChunkName: "work" */ '../pages/Work'));
+const Work = lazy(() => import(/* webpackChunkName: "work" */ '../containers/Work'));
+const List = lazy(() => import(/* webpackChunkName: "list" */ '../containers/List'));
 const routes = [
-    {
-        path: '/list',
-        component: List,
-        key: 'list',
-    },
     {
         path: '/work',
         component: Work,
         key: 'work',
+    },
+    {
+        path: '/list',
+        component: List,
+        key: 'list',
     },
 ];
 
