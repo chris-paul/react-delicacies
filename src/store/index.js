@@ -1,7 +1,7 @@
 /*
  * @Author: 廉恒凯
  * @Date: 2019-12-28 10:02:28
- * @LastEditTime: 2020-04-19 15:25:11
+ * @LastEditTime: 2020-04-19 22:21:41
  * @LastEditors: 廉恒凯
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\store\index.js
@@ -12,8 +12,7 @@ import Immutable from 'immutable';
 import thunk from 'redux-thunk';
 import rootReducers from '../reducers';
 
-const getStore = () => {
-    const state = Immutable.fromJS({});
+const getStore = (state = Immutable.fromJS({})) => {
     const devMode = process.env.NODE_ENV !== 'production';
     if (devMode) {
         // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -33,3 +32,5 @@ const getStore = () => {
 const store = getStore();
 
 export default store;
+
+export { getStore };

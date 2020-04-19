@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-18 18:46:03
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-19 18:18:39
+ * @LastEditTime: 2020-04-19 21:08:56
  * @Description: file content
  */
 import React from 'react';
@@ -49,7 +49,6 @@ describe(' Counter Component ', () => {
         buttons.at(0).simulate('click', {
             stopPropagation: () => {},
         });
-        // 最后一次调用参数是1
         expect(increment).toHaveBeenLastCalledWith('1');
     });
 
@@ -58,7 +57,6 @@ describe(' Counter Component ', () => {
         buttons.at(1).simulate('click', {
             stopPropagation: () => {},
         });
-        // 最后一次调用参数是1
         expect(decrement).toHaveBeenLastCalledWith('1');
     });
 });
