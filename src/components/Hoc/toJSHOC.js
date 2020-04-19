@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2019-12-28 10:36:51
- * @LastEditTime : 2019-12-31 18:27:39
- * @LastEditors  : Please set LastEditors
+ * @LastEditTime: 2020-04-19 16:49:08
+ * @LastEditors: 廉恒凯
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\components\Hoc\toJSHOC.js
  */
@@ -21,13 +21,14 @@ import { Iterable } from 'immutable';
 const toJs = WrappedComponent => wrappedComponentProps => {
     const KEY = 0;
     const VALUE = 1;
-    const propsJS = Object.entries(wrappedComponentProps)
-        .reduce((props, wrappedComponentProp) => {
-            return {
-                ...props,
-                [wrappedComponentProp[KEY]]: Iterable.isIterable(wrappedComponentProp[VALUE]) ? wrappedComponentProp[VALUE].toJS() : wrappedComponentProp[VALUE]
-            }
-        }, {});
+    const propsJS = Object.entries(wrappedComponentProps).reduce((props, wrappedComponentProp) => {
+        return {
+            ...props,
+            [wrappedComponentProp[KEY]]: Iterable.isIterable(wrappedComponentProp[VALUE])
+                ? wrappedComponentProp[VALUE].toJS()
+                : wrappedComponentProp[VALUE],
+        };
+    }, {});
     return <WrappedComponent {...propsJS} />;
 };
 

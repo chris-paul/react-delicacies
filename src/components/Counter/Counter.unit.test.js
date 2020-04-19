@@ -2,23 +2,23 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-18 18:46:03
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-18 22:36:43
+ * @LastEditTime: 2020-04-19 18:18:39
  * @Description: file content
  */
 import React from 'react';
 import { shallow } from 'enzyme';
 import Counter from './index';
 
-const setup = (value = 0) => {
+const setup = (value = 1, caption = '1') => {
     const actions = {
-        onIncrement: jest.fn(),
-        onDecrement: jest.fn(),
+        increment: jest.fn(),
+        decrement: jest.fn(),
     };
-    const component = shallow(<Counter value={value} {...actions} />);
+    const component = shallow(<Counter caption={caption} value={value} {...actions} />);
 
     return {
         component,
-        actions,
+        ...actions,
         buttons: component.find('Button'),
         span: component.find('span'),
     };
@@ -34,5 +34,31 @@ describe(' Counter Component ', () => {
     it('counter value show with props', () => {
         const { span } = setup(1);
         expect(span.text()).toMatch(/^Counter: 1/);
+    });
+
+    it('Button Component should have value, caption props and onClick', () => {
+        const { buttons } = setup();
+        const addCounterProps = buttons.at(0).props();
+        const descCounterProps = buttons.at(1).props();
+        expect(addCounterProps.onClick).toBeTruthy();
+        expect(descCounterProps.onClick).toBeTruthy();
+    });
+
+    it('increment button should call decrement and send param with caption', () => {
+        const { buttons, increment } = setup();
+        buttons.at(0).simulate('click', {
+            stopPropagation: () => {},
+        });
+        // 最后一次调用参数是1
+        expect(increment).toHaveBeenLastCalledWith('1');
+    });
+
+    it('second button should call decrement and send param with caption', () => {
+        const { buttons, decrement } = setup();
+        buttons.at(1).simulate('click', {
+            stopPropagation: () => {},
+        });
+        // 最后一次调用参数是1
+        expect(decrement).toHaveBeenLastCalledWith('1');
     });
 });

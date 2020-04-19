@@ -53,6 +53,7 @@
                 "extensions": [".js", ".jsx"]
             }
         ],
-        "eslint-disable-next-line": "off"
+        "eslint-disable-next-line": "off",
+        "import/no-named-as-default": "off"
     }
 }

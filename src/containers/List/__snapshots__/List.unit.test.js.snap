@@ -2,7 +2,7 @@
 
 exports[` List Component  <List /> mounts without crashing 1`] = `
 <div>
-  <CounterPanel />
+  <Connect(Component) />
   <CounterPanel />
 </div>
 `;
