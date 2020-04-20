@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 13:22:38
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-19 22:29:58
+ * @LastEditTime: 2020-04-20 12:49:48
  * @Description: file content
  */
 import React, { PureComponent } from 'react';
@@ -20,7 +20,7 @@ export class CounterPanel extends PureComponent {
         const { counterList, increment, decrement } = this.props;
         return (
             <div>
-                <h1 className={styles.listTitle}>Counter List</h1>
+                <h1 className={styles.listTitle}>Counter1 List</h1>
                 {counterList.map(item => (
                     <Counter
                         increment={increment}
