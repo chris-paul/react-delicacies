@@ -2,6 +2,7 @@ import React, { Component, Suspense } from 'react';
 import { Switch, Redirect, Router } from 'react-router-dom';
 import { Layout } from 'antd';
 import { createHashHistory } from 'history';
+import { hot } from 'react-hot-loader/root';
 import Menu from '@components/Menu';
 import routeConfig from '../../router/routeConfig';
 import styles from './index.less';
@@ -38,5 +39,4 @@ class Home extends Component {
         );
     }
 }
-
-export default Home;
+export default hot(Home);
