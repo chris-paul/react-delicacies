@@ -2,15 +2,32 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 13:22:38
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-19 13:30:45
+ * @LastEditTime: 2020-04-26 22:02:57
  * @Description: file content
  */
-import React, { PureComponent } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import toJS from '@components/Hoc/toJSHOC';
+import PropTypes from 'prop-types';
+import { isEmpty } from '../../utils/tools';
 
-class CounterPanel extends PureComponent {
-    render() {
-        return <div>总数是: </div>;
-    }
+export function Summary({ value }) {
+    return !isEmpty(value) && <div>Total Count: {value}</div>;
 }
 
-export default CounterPanel;
+Summary.propTypes = {
+    value: PropTypes.number,
+};
+
+function mapStateToProps(state) {
+    let sum = 0;
+    const counterList = state.getIn(['counterPanel', 'counterList']);
+    counterList.map(row => {
+        const value = row.get('value');
+        sum += value * 1;
+        return row;
+    });
+    return { value: sum };
+}
+
+export default connect(mapStateToProps, null)(toJS(Summary));

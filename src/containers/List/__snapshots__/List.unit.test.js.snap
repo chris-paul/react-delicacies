@@ -3,6 +3,6 @@
 exports[` List Component  <List /> mounts without crashing 1`] = `
 <div>
   <Connect(Component) />
-  <CounterPanel />
+  <Connect(Component) />
 </div>
 `;
