@@ -2,12 +2,12 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-18 18:46:03
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-19 21:08:56
+ * @LastEditTime: 2020-04-27 21:38:20
  * @Description: file content
  */
 import React from 'react';
 import { shallow } from 'enzyme';
-import Counter from './index';
+import Counter from '..';
 
 const setup = (value = 1, caption = '1') => {
     const actions = {

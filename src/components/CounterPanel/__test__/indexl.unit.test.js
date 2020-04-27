@@ -7,7 +7,7 @@
  */
 import React from 'react';
 import { shallow } from 'enzyme';
-import { CounterPanel } from '.';
+import { CounterPanel } from '..';
 
 const setup = (counterList = []) => {
     const actions = {
