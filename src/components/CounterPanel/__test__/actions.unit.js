@@ -2,11 +2,11 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 14:57:57
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-19 15:10:30
+ * @LastEditTime: 2020-04-27 21:33:01
  * @Description: file content
  */
-import * as actions from './counter';
-import { INCREMENT, DECREMENT } from '../constants';
+import * as actions from '../actions';
+import { INCREMENT, DECREMENT } from '../actionTypes';
 
 describe('counterPanel actions', () => {
     it('should create an action to increment', () => {

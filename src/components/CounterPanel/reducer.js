@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-12-28 10:18:39
- * @LastEditTime: 2020-04-19 21:44:21
+ * @LastEditTime: 2020-04-27 21:20:58
  * @LastEditors: 廉恒凯
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\reducers\rootReducers.js
@@ -9,7 +9,7 @@
 /*  项目根目录reducer */
 import { fromJS } from 'immutable';
 import { createReducer } from 'redux-immutablejs';
-import { INCREMENT, DECREMENT } from '../constants';
+import { INCREMENT, DECREMENT } from './actionTypes';
 
 const initialState = fromJS({
     counterList: [],

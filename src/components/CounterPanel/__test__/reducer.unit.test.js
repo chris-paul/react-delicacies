@@ -2,12 +2,12 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 19:20:31
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-19 20:06:38
+ * @LastEditTime: 2020-04-27 21:34:35
  * @Description: file content
  */
 import { fromJS } from 'immutable';
-import reducer from './counterPanel';
-import { INCREMENT, DECREMENT } from '../constants';
+import reducer from '../reducer';
+import { INCREMENT, DECREMENT } from '../actionTypes';
 
 describe('counter reducer', () => {
     it('should return the initial state', () => {

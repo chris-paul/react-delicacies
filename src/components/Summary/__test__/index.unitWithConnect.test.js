@@ -2,14 +2,14 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 13:23:10
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-26 22:09:12
+ * @LastEditTime: 2020-04-27 21:32:39
  * @Description: file content
  */
 import React from 'react';
 import { mount } from 'enzyme';
 import configureMockStore from 'redux-mock-store';
 import { fromJS } from 'immutable';
-import Summary from '.';
+import Summary from '..';
 
 const mockStore = configureMockStore();
 
