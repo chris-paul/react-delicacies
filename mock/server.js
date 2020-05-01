@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-29 22:42:53
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-29 23:24:32
+ * @LastEditTime: 2020-05-01 19:06:53
  * @Description: file content
  */
 const express = require('express');
@@ -17,7 +17,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
-app.use('/mode2/DataOne', (req, res) => {
+app.use('/counter/getCounterList', (req, res) => {
     res.json(
         Mock.mock({
             status: 200,
