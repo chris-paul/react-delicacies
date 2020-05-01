@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 13:22:38
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-27 21:36:48
+ * @LastEditTime: 2020-05-01 22:13:24
  * @Description: file content
  */
 import React, { PureComponent } from 'react';
@@ -16,6 +16,11 @@ import * as actions from './actions';
 import styles from './index.less';
 
 export class CounterPanel extends PureComponent {
+    componentDidMount() {
+        const { getCounterList } = this.props;
+        getCounterList();
+    }
+
     render() {
         const { counterList, increment, decrement } = this.props;
         return (
@@ -40,6 +45,7 @@ CounterPanel.defaultProps = {
     counterList: [],
     decrement: () => {},
     increment: () => {},
+    getCounterList: () => {},
 };
 
 CounterPanel.propTypes = {
@@ -51,6 +57,7 @@ CounterPanel.propTypes = {
     ),
     decrement: PropTypes.func,
     increment: PropTypes.func,
+    getCounterList: PropTypes.func,
 };
 
 export default connect(
