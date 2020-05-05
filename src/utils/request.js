@@ -31,6 +31,7 @@ const codeMessage = {
  * @return:
  */
 const checkStatus = errorRes => {
+    console.info(errorRes);
     const { response } = errorRes;
     if (!response) {
         throw new Error('response is undefined', errorRes);
