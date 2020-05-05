@@ -2,7 +2,7 @@
  * @Description: wepack公共配置
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:03
- * @LastEditTime: 2020-04-20 12:47:33
+ * @LastEditTime: 2020-05-01 23:34:45
  * @LastEditors: 廉恒凯
  */
 const webpack = require('webpack');
@@ -235,7 +235,7 @@ module.exports = {
         port: 3333,
         proxy: {
             '/api': {
-                target: 'http://127.0.0.1:8888/',
+                target: 'http://127.0.0.1:8090/',
                 changeOrigin: true,
             },
         },
