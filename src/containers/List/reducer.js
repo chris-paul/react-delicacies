@@ -49,7 +49,6 @@ export default createReducer(initialState, {
         return state.set('isFetching', false).set('errorMessages', errorMessages);
     },
     [FETCH_COUNTERLIST_SUCCESS]: (state, { counterList }) => {
-        console.info(counterList);
         return state.set('isFetching', false).set('counterList', fromJS(counterList));
     },
 });

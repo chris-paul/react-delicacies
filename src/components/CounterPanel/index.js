@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 13:22:38
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-05-08 22:07:04
+ * @LastEditTime: 2020-05-08 23:21:36
  * @Description: file content
  */
 import React, { PureComponent } from 'react';
@@ -54,7 +54,6 @@ CounterPanel.propTypes = {
 
 export default connect(
     state => {
-        console.info(state.toJS());
         return {
             counterList: state.getIn(['list', 'counterList']),
         };

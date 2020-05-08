@@ -27,7 +27,6 @@ function mapStateToProps(state) {
         sum += value * 1;
         return row;
     });
-    console.info('11', sum);
     return { value: sum };
 }
 

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { message } from 'antd';
 import base from '../server/base';
+import { isObject } from './tools';
 
 const { baseUrl, basePrefix } = base;
 /* 连续点击的错误标示 */
@@ -102,7 +103,7 @@ const requestInterceptor = config => {
  */
 const responseInterceptor = response => {
     removePending(response.config);
-    return JSON.parse(response.data);
+    return isObject(response.data) ? response.data : JSON.parse(response.data);
 };
 
 const errorRequest = error => Promise.error(error);
