@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 13:23:10
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-27 21:32:39
+ * @LastEditTime: 2020-05-08 19:20:51
  * @Description: file content
  */
 import React from 'react';
@@ -16,7 +16,7 @@ const mockStore = configureMockStore();
 const setup = initStore => {
     let store = initStore;
     if (!store) {
-        store = mockStore(fromJS({ counterPanel: { counterList: [] } }));
+        store = mockStore(fromJS({ list: { counterList: [] } }));
     }
     const actions = {
         increment: jest.fn(),
@@ -39,7 +39,7 @@ describe('CounterPanel Component with connect', () => {
     it('should have correct tatal value when counterList is not null ', () => {
         const store = mockStore(
             fromJS({
-                counterPanel: {
+                list: {
                     counterList: [
                         { value: 1, caption: 'first' },
                         { value: 2, caption: 'second' },
@@ -49,5 +49,11 @@ describe('CounterPanel Component with connect', () => {
         );
         const { div } = setup(store);
         expect(div.text()).toEqual('Total Count: 3');
+    });
+
+    it('should have correct tatal value when counterList is null ', () => {
+        const store = mockStore(fromJS({}));
+        const { div } = setup(store);
+        expect(div.text()).toEqual('Total Count: 0');
     });
 });

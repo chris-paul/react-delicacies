@@ -2,12 +2,18 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 19:20:31
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-05-05 11:22:49
+ * @LastEditTime: 2020-05-08 22:05:33
  * @Description: file content
  */
 import { fromJS } from 'immutable';
 import reducer from '../reducer';
-import { INCREMENT, DECREMENT, INIT_COUNTERLIST } from '../actionTypes';
+import {
+    FETCH_COUNTERLIST_LOADING,
+    FETCH_COUNTERLIST_FAILURE,
+    FETCH_COUNTERLIST_SUCCESS,
+    INCREMENT,
+    DECREMENT,
+} from '../actionTypes';
 
 describe('counter reducer', () => {
     it('should return the initial state', () => {
@@ -70,11 +76,28 @@ describe('counter reducer', () => {
         });
     });
 
-    it('should handle INIT_COUNTERLIST when ', () => {
+    it('should handle FETCH_COUNTERLIST_LOADING', () => {
+        const state = fromJS({});
+        expect(reducer(state, { type: FETCH_COUNTERLIST_LOADING }).toJS()).toEqual({
+            isFetching: true,
+        });
+    });
+
+    it('should handle FETCH_COUNTERLIST_FAILURE', () => {
+        const state = fromJS({});
+        const errorMessages = 'fetch error!';
+        expect(reducer(state, { type: FETCH_COUNTERLIST_FAILURE, errorMessages }).toJS()).toEqual({
+            isFetching: false,
+            errorMessages,
+        });
+    });
+
+    it('should handle FETCH_COUNTERLIST_SUCCESS', () => {
         const counterList = [{ value: 1, caption: 'first' }];
-        const state = fromJS([]);
-        expect(reducer(state, { type: INIT_COUNTERLIST, counterList }).equals(fromJS(state))).toBe(
-            true,
-        );
+        const state = fromJS({});
+        expect(reducer(state, { type: FETCH_COUNTERLIST_SUCCESS, counterList }).toJS()).toEqual({
+            counterList,
+            isFetching: false,
+        });
     });
 });

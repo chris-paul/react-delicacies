@@ -31,7 +31,6 @@ const codeMessage = {
  * @return:
  */
 const checkStatus = errorRes => {
-    console.info(errorRes);
     const { response } = errorRes;
     if (!response) {
         throw new Error('response is undefined', errorRes);
@@ -103,7 +102,7 @@ const requestInterceptor = config => {
  */
 const responseInterceptor = response => {
     removePending(response.config);
-    return response;
+    return JSON.parse(response.data);
 };
 
 const errorRequest = error => Promise.error(error);

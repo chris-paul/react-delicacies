@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 13:22:38
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-05-01 22:13:24
+ * @LastEditTime: 2020-05-08 22:07:04
  * @Description: file content
  */
 import React, { PureComponent } from 'react';
@@ -11,16 +11,10 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import toJS from '@components/Hoc/toJSHOC';
-import * as actions from './actions';
-
+import * as actions from '../../containers/List/actions';
 import styles from './index.less';
 
 export class CounterPanel extends PureComponent {
-    componentDidMount() {
-        const { getCounterList } = this.props;
-        getCounterList();
-    }
-
     render() {
         const { counterList, increment, decrement } = this.props;
         return (
@@ -45,7 +39,6 @@ CounterPanel.defaultProps = {
     counterList: [],
     decrement: () => {},
     increment: () => {},
-    getCounterList: () => {},
 };
 
 CounterPanel.propTypes = {
@@ -57,12 +50,14 @@ CounterPanel.propTypes = {
     ),
     decrement: PropTypes.func,
     increment: PropTypes.func,
-    getCounterList: PropTypes.func,
 };
 
 export default connect(
     state => {
-        return { counterList: state.getIn(['counterPanel', 'counterList']) };
+        console.info(state.toJS());
+        return {
+            counterList: state.getIn(['list', 'counterList']),
+        };
     },
     dispatch => ({ ...bindActionCreators(actions, dispatch) }),
 )(toJS(CounterPanel));
