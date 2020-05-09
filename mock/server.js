@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-29 22:42:53
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-05-01 19:06:53
+ * @LastEditTime: 2020-05-08 23:09:54
  * @Description: file content
  */
 const express = require('express');
@@ -17,6 +17,7 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
+
 app.use('/counter/getCounterList', (req, res) => {
     res.json(
         Mock.mock({
@@ -24,7 +25,7 @@ app.use('/counter/getCounterList', (req, res) => {
             'data|1-9': [
                 {
                     caption: () => Mock.mock('@guid'),
-                    'number|1-100': 100,
+                    'value|1-100': 100,
                 },
             ],
         }),

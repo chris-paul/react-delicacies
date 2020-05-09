@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-12-28 10:18:39
- * @LastEditTime: 2020-05-05 11:15:59
+ * @LastEditTime: 2020-05-08 22:37:12
  * @LastEditors: 廉恒凯
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\reducers\rootReducers.js
@@ -9,7 +9,13 @@
 /*  项目根目录reducer */
 import { fromJS } from 'immutable';
 import { createReducer } from 'redux-immutablejs';
-import { INCREMENT, DECREMENT, INIT_COUNTERLIST } from './actionTypes';
+import {
+    FETCH_COUNTERLIST_LOADING,
+    FETCH_COUNTERLIST_FAILURE,
+    FETCH_COUNTERLIST_SUCCESS,
+    INCREMENT,
+    DECREMENT,
+} from './actionTypes';
 
 const initialState = fromJS({
     counterList: [],
@@ -36,7 +42,13 @@ export default createReducer(initialState, {
             });
         });
     },
-    [INIT_COUNTERLIST]: (state, { counterList }) => {
-        return state.set('counterList', fromJS(counterList));
+    [FETCH_COUNTERLIST_LOADING]: state => {
+        return state.set('isFetching', true);
+    },
+    [FETCH_COUNTERLIST_FAILURE]: (state, { errorMessages }) => {
+        return state.set('isFetching', false).set('errorMessages', errorMessages);
+    },
+    [FETCH_COUNTERLIST_SUCCESS]: (state, { counterList }) => {
+        return state.set('isFetching', false).set('counterList', fromJS(counterList));
     },
 });

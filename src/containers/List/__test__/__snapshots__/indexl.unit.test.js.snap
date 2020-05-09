@@ -6,3 +6,10 @@ exports[` List Component  <List /> mounts without crashing 1`] = `
   <Connect(Component) />
 </div>
 `;
+
+exports[` List Component  <List /> shallow without crashing 1`] = `
+<div>
+  <Connect(Component) />
+  <Connect(Component) />
+</div>
+`;

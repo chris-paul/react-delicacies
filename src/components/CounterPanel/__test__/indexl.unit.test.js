@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 13:23:10
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-05-01 22:13:40
+ * @LastEditTime: 2020-05-08 21:59:22
  * @Description: file content
  */
 import React from 'react';
@@ -48,18 +48,5 @@ describe(' CounterPanel Component ', () => {
         expect(counterProps.increment).toBeTruthy();
         expect(counterProps.increment).toBeTruthy();
         expect(counterProps.caption).toBe('1');
-    });
-
-    it('CounterPanel ComponentDidMount should called', () => {
-        const componentDidMountSpy = jest.spyOn(CounterPanel.prototype, 'componentDidMount');
-        setup();
-        expect(componentDidMountSpy).toHaveBeenCalled();
-        componentDidMountSpy.mockRestore();
-    });
-
-    it('getCounterList should be called when ComponentDidMount', () => {
-        const { component } = setup([], { disableLifecycleMethods: true });
-        component.instance().componentDidMount();
-        expect(component.instance().props.getCounterList).toHaveBeenCalled();
     });
 });

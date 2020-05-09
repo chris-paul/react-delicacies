@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 13:22:38
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-27 21:03:00
+ * @LastEditTime: 2020-05-08 22:41:57
  * @Description: file content
  */
 import React from 'react';
@@ -21,7 +21,7 @@ Summary.propTypes = {
 
 function mapStateToProps(state) {
     let sum = 0;
-    const counterList = state.getIn(['counterPanel', 'counterList']);
+    const counterList = state.getIn(['list', 'counterList'], []);
     counterList.map(row => {
         const value = row.get('value');
         sum += value * 1;
