@@ -1,7 +1,7 @@
 /*
  * @Author: 廉恒凯
  * @Date: 2020-01-12 06:39:48
- * @LastEditTime: 2020-04-18 11:40:09
+ * @LastEditTime: 2020-09-12 10:03:03
  * @LastEditors: 廉恒凯
  * @Description: test Utils
  * @FilePath: /react-delicacies/src/utils/tests/tools.test.js
@@ -12,7 +12,7 @@ let undefinedVar;
 describe('tools utils', () => {
     describe('isString', () => {
         test.each([
-            ['a', true, '(shoule true when input is string)'],
+            ['a', false, '(shoule true when input is string)'],
             [Object('a'), true, '(shoule true when input is String Object)'],
             [1, false, '(shoule true when input is String number)'],
             [true, false, '(shoule false when input is string)'],
