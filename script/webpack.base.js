@@ -156,7 +156,7 @@ module.exports = {
         ],
     },
     plugins: {
-        contextReplacement: new webpack.ContextReplacementPlugin(/moment\/locale$/, /zh-cn/),
+        // contextReplacement: new webpack.ContextReplacementPlugin(/moment\/locale$/, /zh-cn/),
         antdDayjsWebpack: new AntdDayjsWebpackPlugin(),
         define: new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(nodeEnv),

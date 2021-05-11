@@ -23,7 +23,7 @@ module.exports = {
         webpackBase.plugins.nameModule,
         webpackBase.plugins.define,
         webpackBase.plugins.lodashModuleReplacement,
-        webpackBase.plugins.contextReplacement,
+        // webpackBase.plugins.contextReplacement,
         webpackBase.plugins.antdDayjsWebpack,
         // webpackBase.plugins.hardSourceWebpack,
         webpackBase.plugins.hotModuleReplacement,
