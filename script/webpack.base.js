@@ -85,7 +85,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                include: path.resolve(__dirname, '../node_modules'),
+                include: [/[\\/]node_modules[\\/].*antd/],
                 use: [devMode ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
@@ -118,7 +118,7 @@ module.exports = {
             },
             {
                 test: /\.less$/,
-                include: [path.resolve(__dirname, '../node_modules')],
+                include: [/[\\/]node_modules[\\/].*antd/],
                 use: [
                     devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
