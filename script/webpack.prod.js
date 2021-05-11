@@ -32,7 +32,7 @@ const config = {
         webpackBase.plugins.htmlWebpack,
         webpackBase.plugins.define,
         webpackBase.plugins.lodashModuleReplacement,
-        webpackBase.plugins.contextReplacement,
+        // webpackBase.plugins.contextReplacement,
         webpackBase.plugins.antdDayjsWebpack,
         webpackBase.plugins.miniCssExtract,
         webpackBase.plugins.optimizeCssAssets,
