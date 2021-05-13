@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 /*
  * @Author: lhk
  * @Date: 2019-12-28 10:15:07
@@ -6,33 +7,27 @@
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\router\routeConfig.js
  */
-
-import React, { lazy } from 'react';
-import { Route } from 'react-router-dom';
+import { lazy } from 'react';
+import { Redirect } from 'react-router-dom';
 
 const Work = lazy(() => import(/* webpackChunkName: "work" */ '../containers/Work'));
 const List = lazy(() => import(/* webpackChunkName: "list" */ '../containers/List'));
-const routes = [
+
+export default [
     {
         path: '/work',
         component: Work,
-        key: 'work',
+        exact: true,
     },
     {
         path: '/list',
         component: List,
-        key: 'list',
+        exact: true,
+    },
+    {
+        path: '/',
+        component: List,
+        // eslint-disable-next-line react/display-name
+        render: () => <Redirect to="/list" />,
     },
 ];
-
-const RouteWithSubRoutes = route => (
-    <Route
-        exact
-        path={route.path}
-        render={param => <route.component {...param} routes={route.routes} />}
-    />
-);
-
-const routeConfig = routes.map(route => <RouteWithSubRoutes key={route.key} {...route} />);
-
-export default routeConfig;

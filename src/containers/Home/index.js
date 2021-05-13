@@ -1,13 +1,14 @@
 import React, { Component, Suspense } from 'react';
-import { Switch, Redirect, Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { Layout } from 'antd';
 import { createHashHistory } from 'history';
+import { renderRoutes } from 'react-router-config';
 import { hot } from 'react-hot-loader/root';
 import Menu from '@components/Menu';
 import routeConfig from '../../router/routeConfig';
 import styles from './index.less';
 
-const { Content, Sider } = Layout;
+const { Sider } = Layout;
 
 const history = createHashHistory();
 
@@ -19,23 +20,16 @@ class Home extends Component {
 
     render() {
         return (
-            <Router history={history}>
+            <BrowserRouter history={history}>
                 <Layout className={styles.layoutSlder}>
                     <Sider theme="light">
                         <Menu />
                     </Sider>
-                    <Layout>
-                        <Content>
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <Switch>
-                                    {routeConfig}
-                                    <Redirect from="/*" to="/list" />
-                                </Switch>
-                            </Suspense>
-                        </Content>
-                    </Layout>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        {renderRoutes(routeConfig)}
+                    </Suspense>
                 </Layout>
-            </Router>
+            </BrowserRouter>
         );
     }
 }
