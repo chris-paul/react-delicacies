@@ -8,8 +8,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Menu } from 'antd';
-import { HomeOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import { PropTypes } from 'prop-types';
+import { memuData } from './constant';
 
 class Index extends Component {
     constructor(props) {
@@ -41,6 +41,22 @@ class Index extends Component {
         return state;
     }
 
+    renderMenuItem = () => {
+        return (
+            <>
+                {memuData.map(item => {
+                    const { link, name, menuIcon } = item;
+                    return (
+                        <Menu.Item key={link}>
+                            {menuIcon()}
+                            <span>{name}</span>
+                        </Menu.Item>
+                    );
+                })}
+            </>
+        );
+    };
+
     render() {
         const { selectedKeys } = this.state;
         const { history } = this.props;
@@ -55,14 +71,7 @@ class Index extends Component {
                     this.setState({ selectedKeys: [key] });
                 }}
             >
-                <Menu.Item key="/list">
-                    <HomeOutlined />
-                    <span>工作台</span>
-                </Menu.Item>
-                <Menu.Item key="/work">
-                    <ShoppingCartOutlined />
-                    <span>订单管理</span>
-                </Menu.Item>
+                {this.renderMenuItem()}
             </Menu>
         );
     }
