@@ -12,22 +12,25 @@ import styles from './index.less';
 
 const Counter = ({ value, caption, increment, decrement }) => (
     <div className={styles.counterWrap}>
-        <span data-test="counterValue" className={styles.valueText}>
-            Counter: {value}
+        <span data-test="counterValue" className={styles.text}>
+            Counter:
         </span>
-        <Button
-            onClick={() => {
-                increment(caption);
-            }}
-            data-test="addButton"
-            className={styles.addButton}
-            type="primary"
-        >
-            +
-        </Button>
-        <Button data-test="decButton" type="default" onClick={() => decrement(caption)}>
-            -
-        </Button>
+        <div className={styles.counter_contetn}>
+            <Button
+                onClick={() => {
+                    increment(caption);
+                }}
+                data-test="addButton"
+                className={styles.addButton}
+                type="primary"
+            >
+                +
+            </Button>
+            <span className={styles.num}>{value}</span>
+            <Button data-test="decButton" type="default" onClick={() => decrement(caption)}>
+                -
+            </Button>
+        </div>
     </div>
 );
 

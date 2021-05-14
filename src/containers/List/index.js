@@ -7,6 +7,7 @@
  * @FilePath: \react-delicacies\src\pages\Login\index.js
  */
 import React, { PureComponent } from 'react';
+import { Divider } from 'antd';
 import CounterPanel from '@components/CounterPanel';
 import Summary from '@components/Summary';
 import FetchError from '@components/FetchError';
@@ -43,6 +44,7 @@ export class List extends PureComponent {
         return (
             <div className={styles.counterListWrap}>
                 <CounterPanel />
+                <Divider>Total</Divider>
                 <Summary />
             </div>
         );

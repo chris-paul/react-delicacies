@@ -12,10 +12,15 @@ import PropTypes from 'prop-types';
 import { isEmpty } from '../../utils/tools';
 
 export function Summary({ value }) {
-    return !isEmpty(value) && <div>Total Count: {value}</div>;
+    return (
+        !isEmpty(value) && (
+            <div style={{ fontWeight: 'bold', fontSize: '16px' }}>Total Count: {value}</div>
+        )
+    );
 }
 
 Summary.propTypes = {
+    // eslint-disable-next-line react/require-default-props
     value: PropTypes.number,
 };
 
