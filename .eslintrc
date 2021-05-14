@@ -33,10 +33,10 @@
         "import/resolver": {
             "alias": {
                 "map": [
+                    ["@time", "dayjs"],
                     ["@components", "./src/components"],
                     ["@api", "./src/server"],
-                    ["@tests", "./tests"],
-                    ["moment", "dayjs"]
+                    ["@tests", "./tests"]
                 ]
             }
         },
