@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`About should have select 1`] = `
+exports[`About should show despriction success 1`] = `
 <List
   data-test="about"
   dataSource={
