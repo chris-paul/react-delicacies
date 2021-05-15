@@ -2,7 +2,7 @@
  * @Description: REACT-DELICACIES
  * @Author: 廉恒凯
  * @Date: 2019-08-24 10:38:04
- * @LastEditTime: 2021-05-15 15:13:23
+ * @LastEditTime: 2021-05-15 16:01:54
  * @LastEditors: 廉恒凯
  -->
 
@@ -10,7 +10,7 @@
 
 ## React-Delicacies
 
--   基于 React, Redux, React-Router, Immutable 的前端脚手架
+> 基于 React, Redux, React-Router, Immutable 的前端脚手架
 
 ## 关于主要技术栈
 
@@ -18,7 +18,7 @@
 
 -   基于 redux-thunk 处理 action 异步问题,关于 action 的调用顺序如有需要请使用自研中间件 redux-controlled-promise,使用方式请看官方文档
 
--   基于 Jest 和 Enzyme 提供完善的单元测试和集成测试, 支持复杂场景冒烟测试
+-   基于 Jest 和 Enzyme 提供完善的单元测试和集成测试, 复杂场景冒烟测试可自己安装相应依赖
 
 -   支持第三方平台 Mock 数据
 
