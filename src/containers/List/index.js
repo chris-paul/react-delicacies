@@ -1,13 +1,12 @@
 /*
  * @Author: 廉恒凯
  * @Date: 2019-12-28 10:16:47
- * @LastEditTime: 2020-07-28 17:18:04
+ * @LastEditTime: 2021-05-15 12:42:11
  * @LastEditors: 廉恒凯
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\pages\Login\index.js
  */
 import React, { PureComponent } from 'react';
-import { Divider } from 'antd';
 import CounterPanel from '@components/CounterPanel';
 import Summary from '@components/Summary';
 import FetchError from '@components/FetchError';
@@ -44,7 +43,6 @@ export class List extends PureComponent {
         return (
             <div className={styles.counterListWrap}>
                 <CounterPanel />
-                <Divider>Total</Divider>
                 <Summary />
             </div>
         );
