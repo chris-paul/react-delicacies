@@ -1,24 +1,29 @@
+@counterMargin: 10px;
+@counterWidth: 60px;
+@counterHeight: 30px;
+@counterBorderColor: #40a9ff;
+@counterBackGroundColor: #fff;
+
 .counterWrap {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
+    margin-bottom: @counterMargin;
+    .flex_layout();
 
     .text {
-        margin-right: 10px;
+        margin-right: @counterMargin;
     }
 
-    .counter_contetn {
-        display: flex;
-        align-items: center;
-        border: 1px solid #40a9ff;
+    .counterContent {
+        .flex_layout();
+
+        border: 1px solid @counterBorderColor;
 
         .num {
             display: inline-block;
-            width: 60px;
+            width: @counterWidth;
             text-align: center;
-            background: #fff;
-            height: 30px;
-            line-height: 30px;
+            background: @counterBackGroundColor;
+            height: @counterHeight;
+            line-height: @counterHeight;
         }
     }
 }

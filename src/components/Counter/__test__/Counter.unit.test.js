@@ -2,11 +2,12 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-18 18:46:03
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-27 21:38:20
+ * @LastEditTime: 2021-05-15 11:03:38
  * @Description: file content
  */
 import React from 'react';
 import { shallow } from 'enzyme';
+import findTestWrapper from '@tests/utils/tools';
 import Counter from '..';
 
 const setup = (value = 1, caption = '1') => {
@@ -20,7 +21,8 @@ const setup = (value = 1, caption = '1') => {
         component,
         ...actions,
         buttons: component.find('Button'),
-        span: component.find('span'),
+        counterValue: findTestWrapper(component, 'counterValue'),
+        counterLabel: findTestWrapper(component, 'counterLabel'),
     };
 };
 
@@ -32,8 +34,9 @@ describe(' Counter Component ', () => {
     });
 
     it('counter value show with props', () => {
-        const { span } = setup(1);
-        expect(span.text()).toMatch(/^Counter: 1/);
+        const { counterLabel, counterValue } = setup(1);
+        expect(counterLabel.text()).toMatch(/^Counter/);
+        expect(counterValue.text()).toMatch(/^1/);
     });
 
     it('Button Component should have value, caption props and onClick', () => {

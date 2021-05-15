@@ -1,7 +1,13 @@
-const React = require('react');
+/*
+ * @Author: 廉恒凯
+ * @Date: 2019-12-29 21:55:18
+ * @LastEditors: 廉恒凯
+ * @LastEditTime: 2021-05-15 12:14:11
+ * @Description: file content
+ */
+// const React = require('react');
 
-// eslint-disable-next-line no-console
-console.log('Current React Version:', React.version);
+// console.log('Current React Version:', React.version);
 
 /* eslint-disable global-require */
 if (typeof window !== 'undefined') {
