@@ -2,7 +2,7 @@
 /*
  * @Author: lhk
  * @Date: 2019-12-28 10:15:07
- * @LastEditTime: 2020-04-18 12:49:26
+ * @LastEditTime: 2021-05-15 14:37:27
  * @LastEditors: 廉恒凯
  * @Description: In User Settings Edit
  * @FilePath: \react-delicacies\src\router\routeConfig.js
@@ -10,13 +10,13 @@
 import { lazy } from 'react';
 import { Redirect } from 'react-router-dom';
 
-const Work = lazy(() => import(/* webpackChunkName: "work" */ '../containers/Work'));
+const About = lazy(() => import(/* webpackChunkName: "work" */ '../containers/About'));
 const List = lazy(() => import(/* webpackChunkName: "list" */ '../containers/List'));
 
 export default [
     {
-        path: '/work',
-        component: Work,
+        path: '/about',
+        component: About,
         exact: true,
     },
     {
