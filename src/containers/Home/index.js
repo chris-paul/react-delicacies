@@ -1,4 +1,11 @@
-import React, { Component, Suspense } from 'react';
+/*
+ * @Author: 廉恒凯
+ * @Date: 2021-05-13 20:50:51
+ * @LastEditors: 廉恒凯
+ * @LastEditTime: 2021-05-15 12:41:46
+ * @Description: file content
+ */
+import React, { PureComponent, Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Layout } from 'antd';
 import { createHashHistory } from 'history';
@@ -12,12 +19,7 @@ const { Sider } = Layout;
 
 const history = createHashHistory();
 
-class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
+class Home extends PureComponent {
     render() {
         return (
             <BrowserRouter history={history}>

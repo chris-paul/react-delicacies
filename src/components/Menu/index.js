@@ -2,20 +2,21 @@
  * @Author: 廉恒凯
  * @Date: 2019-12-29 16:38:11
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-28 22:15:14
+ * @LastEditTime: 2021-05-15 10:07:12
  * @Description: Menu
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Menu } from 'antd';
 import { PropTypes } from 'prop-types';
-import { memuData } from './constant';
+import memuData from './constant';
 
-class Index extends Component {
+class MenuNavigate extends Component {
     constructor(props) {
         super(props);
+        this.defaultOpenKeys = ['/list'];
         this.state = {
-            selectedKeys: ['/list'],
+            selectedKeys: this.defaultOpenKeys,
             // 当前页面路径
             pathname: '',
         };
@@ -41,22 +42,6 @@ class Index extends Component {
         return state;
     }
 
-    renderMenuItem = () => {
-        return (
-            <>
-                {memuData.map(item => {
-                    const { link, name, menuIcon } = item;
-                    return (
-                        <Menu.Item key={link}>
-                            {menuIcon()}
-                            <span>{name}</span>
-                        </Menu.Item>
-                    );
-                })}
-            </>
-        );
-    };
-
     render() {
         const { selectedKeys } = this.state;
         const { history } = this.props;
@@ -64,29 +49,36 @@ class Index extends Component {
             <Menu
                 theme="light"
                 mode="inline"
-                defaultOpenKeys={['/list']}
+                defaultOpenKeys={this.defaultOpenKeys}
                 selectedKeys={selectedKeys}
                 onClick={({ key }) => {
                     history.push(key);
                     this.setState({ selectedKeys: [key] });
                 }}
             >
-                {this.renderMenuItem()}
+                {memuData.map(item => {
+                    const { link, name, menuIcon } = item;
+                    return (
+                        <Menu.Item key={link} icon={menuIcon}>
+                            {name}
+                        </Menu.Item>
+                    );
+                })}
             </Menu>
         );
     }
 }
 
-Index.propTypes = {
+MenuNavigate.propTypes = {
     history: PropTypes.instanceOf(Object).isRequired,
     location: PropTypes.shape({
         pathname: PropTypes.string.isRequired,
     }),
 };
 
-Index.defaultProps = {
+MenuNavigate.defaultProps = {
     location: {
         pathname: '',
     },
 };
-export default withRouter(Index);
+export default withRouter(MenuNavigate);
