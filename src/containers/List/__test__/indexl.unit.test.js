@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 13:23:10
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-05-08 13:38:33
+ * @LastEditTime: 2021-05-15 11:26:08
  * @Description: file content
  */
 import React from 'react';
@@ -38,7 +38,7 @@ describe(' List Component ', () => {
 
     // it('should render CounterPanel', () => {
     //     const { component } = setup();
-    //     console.info(component.find('Connect(Component)').dive().debug())
+    //     // console.info(component.find('Connect(Component)').dive().debug())
     //     const counterPanel = component.find('Connect(CounterPanel)');
     //     expect(counterPanel.exists()).toBeTruthy();
     // });
