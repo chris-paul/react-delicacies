@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-18 15:40:38
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-04-19 22:23:34
+ * @LastEditTime: 2021-05-15 11:01:32
  * @Description: file content
  */
 import React from 'react';
@@ -12,10 +12,10 @@ import styles from './index.less';
 
 const Counter = ({ value, caption, increment, decrement }) => (
     <div className={styles.counterWrap}>
-        <span data-test="counterValue" className={styles.text}>
+        <span data-test="counterLabel" className={styles.text}>
             Counter:
         </span>
-        <div className={styles.counter_contetn}>
+        <div className={styles.counterContent}>
             <Button
                 onClick={() => {
                     increment(caption);
@@ -26,7 +26,9 @@ const Counter = ({ value, caption, increment, decrement }) => (
             >
                 +
             </Button>
-            <span className={styles.num}>{value}</span>
+            <span data-test="counterValue" className={styles.num}>
+                {value}
+            </span>
             <Button data-test="decButton" type="default" onClick={() => decrement(caption)}>
                 -
             </Button>

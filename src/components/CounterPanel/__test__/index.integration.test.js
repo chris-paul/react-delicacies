@@ -2,7 +2,7 @@
  * @Author: 廉恒凯
  * @Date: 2020-04-19 21:18:13
  * @LastEditors: 廉恒凯
- * @LastEditTime: 2020-05-06 13:23:32
+ * @LastEditTime: 2021-05-15 11:06:20
  * @Description: file content
  */
 import React from 'react';
@@ -25,10 +25,10 @@ describe('CounterPanel Component ', () => {
             caption: 'first',
         });
         const counterValue = findTestWrapper(wrapper, 'counterValue');
-        expect(counterValue.text()).toEqual('Counter: 2');
+        expect(counterValue.text()).toEqual('2');
         wrapper.find('button[data-test="decButton"]').simulate('click', {
             caption: 'first',
         });
-        expect(counterValue.text()).toEqual('Counter: 1');
+        expect(counterValue.text()).toEqual('1');
     });
 });
