@@ -10,7 +10,7 @@
 
 ## React-Delicacies
 
-> 基于 React, Redux, React-Router, Immutable 的前端脚手架
+> 基于 React, Redux, React-Router, Immutable 的前端项目
 
 ## 关于主要技术栈
 
