@@ -2,10 +2,11 @@
  * @Description: wepack公共配置
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:03
- * @LastEditTime: 2020-05-01 23:34:45
+ * @LastEditTime: 2021-05-15 12:23:59
  * @LastEditors: 廉恒凯
  */
 const webpack = require('webpack');
+const Happypack = require('happypack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -41,8 +42,16 @@ module.exports = {
                     test: /[\\/]node_modules[\\/]/,
                     chunks: 'initial',
                     name: 'vendors',
-                    priority: 10,
+                    priority: 1,
                     enforce: true,
+                    minSize: 0,
+                    minChunks: 1,
+                },
+                common: {
+                    chunks: 'initial',
+                    name: 'common',
+                    minSize: 100,
+                    minChunks: 3,
                 },
             },
         },
@@ -153,6 +162,16 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.js|jsx$/,
+                use: 'Happypack/loader?id=js',
+                include: [path.resolve(__dirname, 'src')],
+            },
+            {
+                test: /\.less$/,
+                use: 'Happypack/loader?id=style',
+                include: [path.resolve(__dirname, 'src'), /[\\/]node_modules[\\/].*antd/],
+            },
         ],
     },
     plugins: {
@@ -224,6 +243,17 @@ module.exports = {
         }),
         progressBarPlugin: new ProgressBarPlugin(),
         hotModuleReplacement: new webpack.HotModuleReplacementPlugin(),
+        happyPackJsx: new Happypack({
+            id: 'jsx',
+            threads: 4,
+            loaders: ['babel-loader'],
+        }),
+
+        happyPackStyle: new Happypack({
+            id: 'styles',
+            threads: 2,
+            loaders: ['style-loader', 'css-loader', 'less-loader'],
+        }),
     },
     devServer: {
         hot: true,
@@ -231,11 +261,11 @@ module.exports = {
         historyApiFallback: true,
         contentBase: path.join(__dirname, '../public'),
         compress: true,
-        host: '0.0.0.0',
+        host: 'localhost',
         port: 3333,
         proxy: {
             '/api': {
-                target: 'http://127.0.0.1:8090/',
+                target: 'http://localhost:8090/',
                 changeOrigin: true,
             },
         },

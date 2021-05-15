@@ -2,7 +2,7 @@
  * @Description: webpack开发模式
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:14
- * @LastEditTime: 2020-04-18 21:31:12
+ * @LastEditTime: 2021-05-15 12:28:13
  * @LastEditors: 廉恒凯
  */
 const path = require('path');
@@ -23,10 +23,11 @@ module.exports = {
         webpackBase.plugins.nameModule,
         webpackBase.plugins.define,
         webpackBase.plugins.lodashModuleReplacement,
-        // webpackBase.plugins.contextReplacement,
         webpackBase.plugins.antdDayjsWebpack,
-        // webpackBase.plugins.hardSourceWebpack,
+        webpackBase.plugins.hardSourceWebpack,
         webpackBase.plugins.hotModuleReplacement,
+        webpackBase.plugins.happyPackJsx,
+        webpackBase.plugins.happyPackStyle,
     ],
     devServer: webpackBase.devServer,
     externals: webpackBase.externals,

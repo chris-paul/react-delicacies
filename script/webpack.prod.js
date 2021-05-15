@@ -4,7 +4,7 @@
  * @Description: webpack生产环境
  * @Author: 廉恒凯
  * @Date: 2019-08-24 16:28:45
- * @LastEditTime: 2020-04-12 18:03:43
+ * @LastEditTime: 2021-05-15 12:27:39
  * @LastEditors: 廉恒凯
  */
 const path = require('path');
@@ -40,6 +40,8 @@ const config = {
         webpackBase.plugins.progressBarPlugin,
         webpackBase.plugins.hashModuleIds,
         webpackBase.plugins.bundleAnalyzer,
+        webpackBase.plugins.happyPackJsx,
+        webpackBase.plugins.happyPackStyle,
     ],
     externals: webpackBase.externals,
 };
