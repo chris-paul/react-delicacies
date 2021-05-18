@@ -25,7 +25,7 @@ const data = [
     {
         author: 'MMLucy',
         avatar: 'https://avatars.githubusercontent.com/u/23635143?v=4',
-        content: <p>上海i 云保公司前端开发工程师,重庆妹子一枚,酷爱旅游,欢迎大家踊跃star。</p>,
+        content: <p>上海某公司前端开发工程师,重庆妹子一枚,酷爱旅游,欢迎大家踊跃star。</p>,
     },
 ];
 
